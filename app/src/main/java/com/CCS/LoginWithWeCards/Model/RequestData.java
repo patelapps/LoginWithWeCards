@@ -6,7 +6,7 @@ import android.content.Intent;
 import com.CCS.LoginWithWeCards.Model.Handler.LoginRequestHandler;
 
 import static com.CCS.LoginWithWeCards.API.jsonKeys.DATA;
-import static com.CCS.LoginWithWeCards.API.jsonKeys.DEVICE_TYPE;
+import static com.CCS.LoginWithWeCards.Utils.AppContacts.DEVICE_TYPE;
 import static com.CCS.LoginWithWeCards.Utils.AppContacts.LOGINWITH;
 import static com.CCS.LoginWithWeCards.Utils.AppContacts.loginWithAppPackageName;
 import static com.CCS.LoginWithWeCards.Utils.AppContacts.loginWithWecardKey;
