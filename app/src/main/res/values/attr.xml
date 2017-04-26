@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <declare-styleable name="CustomBtn">
+        <attr name="btnPressColor" format="color" />
+        <attr name="btnDeafultColor" format="color" />
+        <attr name="btnBorderCOlor" format="color" />
+
+        <attr name="btnTextPress" format="color" />
+        <attr name="btnTextColor" format="color" />
+
+        <attr name="btnCornerRadiusLeftTop" format="integer" />
+        <attr name="btnCornerRadiusRightTop" format="integer" />
+        <attr name="btnCornerRadiusRightBottom" format="integer" />
+        <attr name="btnCornerRadiusLeftBottom" format="integer" />
+        <attr name="btnBorderSize" format="integer" />
+    </declare-styleable>
+
+</resources>
