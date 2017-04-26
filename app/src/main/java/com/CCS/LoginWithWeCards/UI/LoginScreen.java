@@ -25,35 +25,37 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import ccs.com.LoginWithWeCards.API.Handler.APIResponse;
-import ccs.com.LoginWithWeCards.API.Handler.APIResponseHandler;
-import ccs.com.LoginWithWeCards.API.Handler.DataHandler;
-import ccs.com.LoginWithWeCards.API.RestClient;
-import ccs.com.LoginWithWeCards.CountryCodeInfo.CountryCodeInfoController;
-import ccs.com.LoginWithWeCards.CustomView.ProgressDialogCustom;
-import ccs.com.LoginWithWeCards.Model.Handler.LoginRequestHandler;
-import ccs.com.LoginWithWeCards.Model.LoginRequest;
-import ccs.com.LoginWithWeCards.Model.RequestData;
-import ccs.com.LoginWithWeCards.R;
-import ccs.com.LoginWithWeCards.UI.Handler.ScreenHandler;
-import ccs.com.LoginWithWeCards.Utils.AppContacts;
-import ccs.com.LoginWithWeCards.Utils.AppTypeface;
-import ccs.com.LoginWithWeCards.Utils.Deprecation;
-import ccs.com.LoginWithWeCards.Utils.Validate;
+import com.CCS.LoginWithWeCards.API.Handler.APIResponse;
+import com.CCS.LoginWithWeCards.API.Handler.APIResponseHandler;
+import com.CCS.LoginWithWeCards.API.Handler.DataHandler;
+import com.CCS.LoginWithWeCards.API.RestClient;
+import com.CCS.LoginWithWeCards.CountryCodeInfo.CountryCodeInfoController;
+import com.CCS.LoginWithWeCards.CustomView.ProgressDialogCustom;
+import com.CCS.LoginWithWeCards.Model.Handler.LoginRequestHandler;
+import com.CCS.LoginWithWeCards.Model.LoginRequest;
+import com.CCS.LoginWithWeCards.Model.RequestData;
+import com.CCS.LoginWithWeCards.R;
+import com.CCS.LoginWithWeCards.UI.Handler.ScreenHandler;
+import com.CCS.LoginWithWeCards.Utils.AppContacts;
+import com.CCS.LoginWithWeCards.Utils.AppTypeface;
+import com.CCS.LoginWithWeCards.Utils.Deprecation;
+import com.CCS.LoginWithWeCards.Utils.Validate;
+
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-import static ccs.com.LoginWithWeCards.Utils.AppContacts.COUNTRY_CODE_LIMIT;
-import static ccs.com.LoginWithWeCards.Utils.AppContacts.PHONE_NUMBER_LIMIT;
-import static ccs.com.LoginWithWeCards.Utils.AppContacts.Tag;
-import static ccs.com.LoginWithWeCards.Utils.AppContacts.loginWithAppIcon;
-import static ccs.com.LoginWithWeCards.Utils.AppContacts.loginWithAppName;
-import static ccs.com.LoginWithWeCards.Utils.AppContacts.wecardsAppPackage;
-import static ccs.com.LoginWithWeCards.Utils.Deprecation.getColor;
-import static ccs.com.LoginWithWeCards.Utils.isNetworkAvailable.isNetworkAvailable;
-import static ccs.com.LoginWithWeCards.Utils.setDrawableBackGround.setDrawableBackGround;
+import static com.CCS.LoginWithWeCards.Utils.AppContacts.COUNTRY_CODE_LIMIT;
+import static com.CCS.LoginWithWeCards.Utils.AppContacts.PHONE_NUMBER_LIMIT;
+import static com.CCS.LoginWithWeCards.Utils.AppContacts.Tag;
+import static com.CCS.LoginWithWeCards.Utils.AppContacts.loginWithAppIcon;
+import static com.CCS.LoginWithWeCards.Utils.AppContacts.loginWithAppName;
+import static com.CCS.LoginWithWeCards.Utils.AppContacts.wecardsAppPackage;
+import static com.CCS.LoginWithWeCards.Utils.Deprecation.getColor;
+import static com.CCS.LoginWithWeCards.Utils.isNetworkAvailable.isNetworkAvailable;
+import static com.CCS.LoginWithWeCards.Utils.setDrawableBackGround.setDrawableBackGround;
+
 
 /**
  * Created by mauliksantoki on 25/4/17.
@@ -320,7 +322,7 @@ public class LoginScreen extends Dialog implements ScreenHandler {
                         }
                     });
                 } else {
-                    Log.e(AppContacts.Tag, "fail" + response);
+                    Log.e(Tag, "fail" + response);
                 }
 
                 hideProgress();
@@ -328,7 +330,7 @@ public class LoginScreen extends Dialog implements ScreenHandler {
 
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
-                Log.e(AppContacts.Tag, t.getMessage());
+                Log.e(Tag, t.getMessage());
             }
         });
     }
@@ -389,6 +391,7 @@ public class LoginScreen extends Dialog implements ScreenHandler {
         }
         return true;
     }
+
 
     @Override
     public void error(String message) {
