@@ -174,7 +174,7 @@ public class LoginScreen extends Dialog implements ScreenHandler {
 
         ivLoginAppIcon.setImageDrawable(loginWithAppIcon);
         ivConfirmAppIcon.setImageDrawable(loginWithAppIcon);
-        ivTitleAppIcon.setImageDrawable(Deprecation.getDrawable(activity, R.mipmap.ic_launcher_round));
+        ivTitleAppIcon.setImageDrawable(Deprecation.getDrawable(activity, R.mipmap.logo));
 
         btnCancel = (Button) findViewById(R.id.btnCancel);
         btnOK = (Button) findViewById(R.id.btnOK);
