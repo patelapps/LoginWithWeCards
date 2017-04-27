@@ -1,9 +1,11 @@
 package com.CCS.LoginWithWeCards.Model;
 
+import android.support.annotation.Keep;
+
 /**
  * Created by mauliksantoki on 27/4/17.
  */
-
+@Keep
 public class LogoutRequest {
     private String api_key;
 
