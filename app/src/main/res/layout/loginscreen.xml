@@ -10,7 +10,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="@dimen/_10sdp"
+        android:layout_margin="@dimen/_5sdp"
         android:background="@color/white">
 
 
@@ -27,7 +27,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/_30sdp"
-                android:src="@mipmap/ic_launcher" />
+                android:src="@mipmap/logo" />
 
             <TextView
                 android:id="@+id/tvTitle"
@@ -74,7 +74,7 @@
                         android:layout_gravity="center"
                         android:padding="@dimen/_4sdp"
                         android:scaleType="fitXY"
-                        android:src="@mipmap/ic_launcher" />
+                        android:src="@mipmap/logo" />
 
 
                     <TextView
@@ -160,6 +160,8 @@
                     android:layout_marginTop="@dimen/_10sdp"
                     android:background="@color/blue"
                     android:gravity="center"
+                    android:paddingBottom="@dimen/_5sdp"
+                    android:paddingTop="@dimen/_5sdp"
                     android:text="@string/login"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
@@ -222,7 +224,7 @@
                         android:layout_height="@dimen/_80sdp"
                         android:layout_centerInParent="true"
                         android:scaleType="fitXY"
-                        android:src="@mipmap/ic_launcher" />
+                        android:src="@mipmap/logo" />
 
                     <TextView
                         android:id="@+id/tvMessage"
@@ -308,7 +310,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/circle_bg_white"
-        android:src="@android:drawable/ic_menu_close_clear_cancel"
-        android:tint="@color/black" />
+        android:src="@mipmap/close" />
 
 </RelativeLayout>

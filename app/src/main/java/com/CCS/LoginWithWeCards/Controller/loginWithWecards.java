@@ -52,6 +52,7 @@ public class loginWithWecards implements loginWithWecardsHandler {
 
     }
 
+    @Keep
     public void setLoginListener(LoginHandler loginListener) {
         this.loginHandler = loginListener;
         communicator.connect(context, loginHandler);
