@@ -1,9 +1,11 @@
 package com.CCS.LoginWithWeCards.Model;
 
+import android.support.annotation.Keep;
+
 /**
  * Created by mauliksantoki on 25/4/17.
  */
-
+@Keep
 public class LoginRequest {
 
 
