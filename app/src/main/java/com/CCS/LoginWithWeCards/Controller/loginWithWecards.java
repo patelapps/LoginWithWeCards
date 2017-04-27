@@ -93,7 +93,7 @@ public class loginWithWecards implements loginWithWecardsHandler {
             */
             Intent loginWithWecards = new Intent(loginActvity);
             loginWithWecards.putExtra(API_KEY, loginWithWecardKey);
-            loginWithWecards.putExtra(PACKAGENAME, "com.ccs.juzspirits");
+            loginWithWecards.putExtra(PACKAGENAME, loginWithAppPackageName);
             context.startActivity(loginWithWecards);
         } else {
            /*
@@ -122,7 +122,6 @@ public class loginWithWecards implements loginWithWecardsHandler {
         Log.e(Tag, message);
         Toast.makeText(context, message, Toast.LENGTH_LONG).show();
     }
-
 
     /*
      * this method call when register activity will destory
