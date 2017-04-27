@@ -196,6 +196,8 @@ public class LoginScreen extends Dialog implements ScreenHandler {
         btnCancel.setTypeface(appTypeface.getRegularFont());
         btnOK.setTypeface(appTypeface.getRegularFont());
 
+        etPhoneNumber.requestFocus();
+
     }
 
     @Override
@@ -385,7 +387,7 @@ public class LoginScreen extends Dialog implements ScreenHandler {
         } else if (Validate.isEmpty(etPhoneNumber.getText().toString())) {
             error(activity.getResources().getString(R.string.enterPhoneNumber));
             return false;
-        } else if (Validate.isEmpty(etPhoneNumber.getText().toString())) {
+        } else if (Validate.isEmpty(etPasseord.getText().toString())) {
             error(activity.getResources().getString(R.string.enterPassword));
             return false;
         }
