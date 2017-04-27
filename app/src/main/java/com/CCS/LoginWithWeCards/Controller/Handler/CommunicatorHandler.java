@@ -84,6 +84,7 @@ public class CommunicatorHandler extends Communicator {
         logoutRequest.setPackagename(loginWithAppPackageName);
         logoutRequest.setLogin_token(preferences.getString(LOGIN_TOKEN, ""));
         logoutRequest.setUser_id(preferences.getString(USER_ID, ""));
+        logoutAPI();
     }
 
     @Override
