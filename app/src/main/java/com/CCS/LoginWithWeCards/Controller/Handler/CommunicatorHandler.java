@@ -90,7 +90,6 @@ public class CommunicatorHandler extends Communicator {
     @Override
     public void logoutAPI() {
         showProgress();
-
         if (apiResponseHandler == null) {
             apiResponseHandler = new APIResponseHandler();
         }
@@ -101,16 +100,11 @@ public class CommunicatorHandler extends Communicator {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 if (response.isSuccessful()) {
-                    apiResponseHandler.getData(activity, apiResponseHandler.getResult(response), new DataHandler() {
-                        @Override
-                        public void getData(String data, String message) {
-                            loginHandler.result(data);
-                            SharedPreferences.Editor editor = preferences.edit();
-                            editor.putString(USER_ID, "");
-                            editor.putString(LOGIN_TOKEN, "");
-                            editor.commit();
-                        }
-                    });
+                    loginHandler.result(apiResponseHandler.getResult(response));
+                    SharedPreferences.Editor editor = preferences.edit();
+                    editor.putString(USER_ID, "");
+                    editor.putString(LOGIN_TOKEN, "");
+                    editor.commit();
                 } else {
                     Log.e(Tag, "fail" + response);
                 }
