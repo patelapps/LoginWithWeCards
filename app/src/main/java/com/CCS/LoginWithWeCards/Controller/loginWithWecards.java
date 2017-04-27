@@ -10,6 +10,7 @@ import com.CCS.LoginWithWeCards.Controller.Handler.Communicator;
 import com.CCS.LoginWithWeCards.Controller.Handler.CommunicatorHandler;
 import com.CCS.LoginWithWeCards.Controller.Handler.LoginHandler;
 import com.CCS.LoginWithWeCards.Controller.Handler.loginWithWecardsHandler;
+import com.CCS.LoginWithWeCards.CustomView.ProgressDialogCustom;
 import com.CCS.LoginWithWeCards.UI.LoginScreen;
 import com.CCS.LoginWithWeCards.Utils.appInstalledOrNot;
 
@@ -40,10 +41,10 @@ public class loginWithWecards implements loginWithWecardsHandler {
     private Communicator communicator;
 
 
+
+
     public loginWithWecards(Activity context) {
         this.context = context;
-
-
         communicator = new CommunicatorHandler();
         setAppIcon();
         setAppLoginID();
@@ -104,6 +105,12 @@ public class loginWithWecards implements loginWithWecardsHandler {
     }
 
     @Override
+    public void logout() {
+        communicator.logout(context);
+
+    }
+
+    @Override
     public void unRegisterCommunicator() {
         communicator.disConnect(context);
     }
@@ -122,6 +129,8 @@ public class loginWithWecards implements loginWithWecardsHandler {
         Log.e(Tag, message);
         Toast.makeText(context, message, Toast.LENGTH_LONG).show();
     }
+
+
 
     /*
      * this method call when register activity will destory

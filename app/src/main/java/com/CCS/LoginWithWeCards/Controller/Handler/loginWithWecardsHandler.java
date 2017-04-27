@@ -16,10 +16,14 @@ public interface loginWithWecardsHandler {
 
     public void login();
 
+    public void logout();
+
     public void unRegisterCommunicator();
 
     public boolean validation();
 
     public void error(String message);
+
+
 
 }

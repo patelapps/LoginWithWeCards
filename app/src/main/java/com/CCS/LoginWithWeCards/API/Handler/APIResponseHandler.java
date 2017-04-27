@@ -1,6 +1,8 @@
 package com.CCS.LoginWithWeCards.API.Handler;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -17,10 +19,13 @@ import okhttp3.ResponseBody;
 import retrofit2.Response;
 
 import static com.CCS.LoginWithWeCards.API.jsonKeys.DATA;
+import static com.CCS.LoginWithWeCards.API.jsonKeys.LOGIN_TOKEN;
 import static com.CCS.LoginWithWeCards.API.jsonKeys.MESSAGE;
 import static com.CCS.LoginWithWeCards.API.jsonKeys.RESULT;
 import static com.CCS.LoginWithWeCards.API.jsonKeys.STATUS;
 import static com.CCS.LoginWithWeCards.API.jsonKeys.SUCCESS;
+import static com.CCS.LoginWithWeCards.API.jsonKeys.USER_ID;
+import static com.CCS.LoginWithWeCards.Utils.AppContacts.PREFS_PRIVATE;
 
 
 /**
@@ -36,6 +41,8 @@ public class APIResponseHandler extends APIResponse {
 
     private String apiResult = "";
     private String apiResultMessage = "";
+
+    private SharedPreferences preferences;
 
     @Override
     public String getResult(Response<ResponseBody> reader) {
@@ -57,9 +64,20 @@ public class APIResponseHandler extends APIResponse {
     @Override
     public void getData(Activity activity, String result, DataHandler handler) {
         try {
+            if (preferences == null) {
+                preferences = activity.getSharedPreferences(PREFS_PRIVATE, Context.MODE_PRIVATE);
+            }
+
+
             JSONObject jsonObject = new JSONObject(result).optJSONObject(RESULT);
             apiResultMessage = jsonObject.optString(MESSAGE);
             if (jsonObject.optString(STATUS).equalsIgnoreCase(SUCCESS)) {
+
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putString(USER_ID, jsonObject.getJSONObject(DATA).optString(USER_ID));
+                editor.putString(LOGIN_TOKEN, jsonObject.getJSONObject(DATA).optString(LOGIN_TOKEN));
+                editor.commit();
+
                 apiResult = jsonObject.getJSONObject(DATA).toString();
                 handler.getData(apiResult, apiResultMessage);
             } else {

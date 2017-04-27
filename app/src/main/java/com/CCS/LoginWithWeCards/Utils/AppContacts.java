@@ -24,4 +24,6 @@ public class AppContacts {
     public static final int COUNTRY_CODE_LIMIT = 5;
     public static final int PHONE_NUMBER_LIMIT = 15;
 
+    public static final String PREFS_PRIVATE = "PREFS_PRIVATE";
+
 }

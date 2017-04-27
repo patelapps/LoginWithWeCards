@@ -8,14 +8,15 @@ public class jsonKeys {
 
     public static final String API_KEY = "api_key";
     public static final String PACKAGENAME = "packagename";
-    public static final String COUNTRY_CODE = "country_code";
-    public static final String PHONE_NUMBER = "phone_number";
-    public static final String PASSWORD = "password";
-    public static final String LOGIN_WITH = "login_with";
-    public static final String DEVICE_TYPE = "device_type";
-
 
     public static final String DATA = "data";
+
+    public static final String USER_ID = "user_id";
+    public static final String LOGIN_TOKEN = "login_token";
+
+
+
+
 
     public static final String RESULT = "result";
     public static final String SUCCESS = "success";

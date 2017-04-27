@@ -1,6 +1,7 @@
 package com.CCS.LoginWithWeCards.API;
 
 import com.CCS.LoginWithWeCards.Model.LoginRequest;
+import com.CCS.LoginWithWeCards.Model.LogoutRequest;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -36,5 +37,8 @@ public class RestClient {
     public interface GitApiInterface {
         @POST("open/user/login")
         Call<ResponseBody> login(@Body LoginRequest body);
+
+        @POST(" open/user/logout")
+        Call<ResponseBody> logout(@Body LogoutRequest body);
     }
 }
