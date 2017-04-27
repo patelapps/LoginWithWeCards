@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-
+apply plugin: 'maven'
 
 
 android {
@@ -15,12 +15,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    android {
-        lintOptions {
-            abortOnError false
-        }
-    }
-
 }
 
 dependencies {
@@ -28,4 +22,6 @@ dependencies {
     compile 'com.intuit.sdp:sdp-android:1.0.2'
     compile 'com.squareup.retrofit2:retrofit:2.2.0'
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+
+
 }
