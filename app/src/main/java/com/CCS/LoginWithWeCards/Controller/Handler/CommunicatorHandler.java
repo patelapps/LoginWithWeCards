@@ -22,7 +22,6 @@ import retrofit2.Response;
 import static com.CCS.LoginWithWeCards.API.jsonKeys.DATA;
 import static com.CCS.LoginWithWeCards.API.jsonKeys.LOGIN_TOKEN;
 import static com.CCS.LoginWithWeCards.API.jsonKeys.USER_ID;
-import static com.CCS.LoginWithWeCards.CustomView.ProgressDialogCustom.getProgressDialogCustom;
 import static com.CCS.LoginWithWeCards.Utils.AppContacts.PREFS_PRIVATE;
 import static com.CCS.LoginWithWeCards.Utils.AppContacts.Tag;
 import static com.CCS.LoginWithWeCards.Utils.AppContacts.loginWithAppPackageName;
@@ -122,7 +121,7 @@ public class CommunicatorHandler extends Communicator {
     public void showProgress() {
         if (progressDialogCustom == null) {
 //            progressDialogCustom = new ProgressDialogCustom(activity);
-            progressDialogCustom = getProgressDialogCustom(activity);
+            progressDialogCustom = new ProgressDialogCustom(activity);
         }
         progressDialogCustom.show();
     }

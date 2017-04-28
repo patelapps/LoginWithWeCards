@@ -15,11 +15,10 @@ import com.CCS.LoginWithWeCards.R;
 
 public class ProgressDialogCustom extends ProgressDialog {
 
-
     public static ProgressDialogCustom getProgressDialogCustom(Context context) {
         ProgressDialogCustom progressDialogCustom = new ProgressDialogCustom(context);
 
-        ((TextView) progressDialogCustom.findViewById(android.R.id.title)).setTypeface(Typeface.createFromAsset(context.getAssets(), "Roboto-Thin.ttf"));
+        ((TextView) progressDialogCustom.findViewById(android.R.id.title)).setTypeface(Typeface.createFromAsset(context.getAssets(), "Muli.ttf"));
         return progressDialogCustom;
     }
 
