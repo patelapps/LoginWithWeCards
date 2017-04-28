@@ -59,7 +59,7 @@ public class LogoutScreen extends Dialog implements LogoutHandler {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initControl();
-
+initDailogHeight();
         logoutAPI();
     }
 
@@ -113,7 +113,7 @@ public class LogoutScreen extends Dialog implements LogoutHandler {
         Window window = getWindow();
         window.getDecorView().getWindowVisibleDisplayFrame(displayRectangle);
         getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, (int) (displayRectangle.height() * 0.95f));
-//        getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+        getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
         setCanceledOnTouchOutside(false);
     }
 
