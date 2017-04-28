@@ -133,6 +133,8 @@ public class LoginScreen extends Dialog implements ScreenHandler {
         loginRequestHandler = new RequestData();
     }
 
+    private int height = 0;
+
     @Override
     public void initDailogHeight() {
 
@@ -146,9 +148,8 @@ public class LoginScreen extends Dialog implements ScreenHandler {
         getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
         setCanceledOnTouchOutside(false);
 
-        ViewGroup.LayoutParams layoutParams = llLogin.getLayoutParams();
-        layoutParams.height = (int) (displayRectangle.height() * 0.95f);
-        llLogin.setLayoutParams(layoutParams);
+
+        height = (int) (displayRectangle.height() * 0.95f);
 
     }
 
@@ -193,6 +194,14 @@ public class LoginScreen extends Dialog implements ScreenHandler {
         rlconfirm = (RelativeLayout) findViewById(R.id.rlconfirm);
 
         svLogin = (ScrollView) findViewById(R.id.svLogin);
+
+        ViewGroup.LayoutParams layoutParams = llLogin.getLayoutParams();
+        layoutParams.height =height;
+        llLogin.setLayoutParams(layoutParams);
+
+        layoutParams = rlconfirm.getLayoutParams();
+        layoutParams.height =height;
+        rlconfirm.setLayoutParams(layoutParams);
     }
 
     @Override
