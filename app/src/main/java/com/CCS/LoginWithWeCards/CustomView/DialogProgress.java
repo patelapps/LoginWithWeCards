@@ -11,8 +11,10 @@ import com.CCS.LoginWithWeCards.R;
  * Created by bhavika on 5/9/16.
  */
 
-public class ProgressDialogCustom extends ProgressDialog {
-    public ProgressDialogCustom(Context context) {
+public class DialogProgress extends ProgressDialog {
+
+
+    public DialogProgress(Context context) {
         super(context, getStyle());
         setMessage("Please Wait ...");
         setCancelable(false);

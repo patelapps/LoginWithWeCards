@@ -30,7 +30,7 @@ import com.CCS.LoginWithWeCards.API.Handler.APIResponseHandler;
 import com.CCS.LoginWithWeCards.API.Handler.DataHandler;
 import com.CCS.LoginWithWeCards.API.RestClient;
 import com.CCS.LoginWithWeCards.CountryCodeInfo.CountryCodeInfoController;
-import com.CCS.LoginWithWeCards.CustomView.ProgressDialogCustom;
+import com.CCS.LoginWithWeCards.CustomView.DialogProgress;
 import com.CCS.LoginWithWeCards.Model.Handler.LoginRequestHandler;
 import com.CCS.LoginWithWeCards.Model.LoginRequest;
 import com.CCS.LoginWithWeCards.Model.RequestData;
@@ -91,7 +91,7 @@ public class LoginScreen extends Dialog implements ScreenHandler {
 
     private String apiResult = "";
 
-    private ProgressDialogCustom progressDialogCustom;
+    private DialogProgress progressDialogCustom;
 
     /*other variable*/
     private CountryCodeInfoController countryCodeInfoController;
@@ -358,7 +358,7 @@ public class LoginScreen extends Dialog implements ScreenHandler {
     @Override
     public void showProgress() {
         if (progressDialogCustom == null) {
-            progressDialogCustom = new ProgressDialogCustom(activity);
+            progressDialogCustom = new DialogProgress(activity);
         }
         progressDialogCustom.show();
     }

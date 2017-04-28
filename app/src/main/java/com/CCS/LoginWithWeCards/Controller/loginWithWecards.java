@@ -11,7 +11,6 @@ import com.CCS.LoginWithWeCards.Controller.Handler.CommunicatorHandler;
 import com.CCS.LoginWithWeCards.Controller.Handler.LoginHandler;
 import com.CCS.LoginWithWeCards.Controller.Handler.loginWithWecardsHandler;
 import com.CCS.LoginWithWeCards.UI.LoginScreen;
-import com.CCS.LoginWithWeCards.UI.LogoutScreen;
 import com.CCS.LoginWithWeCards.Utils.appInstalledOrNot;
 
 import static com.CCS.LoginWithWeCards.API.jsonKeys.API_KEY;
@@ -97,7 +96,8 @@ public class loginWithWecards implements loginWithWecardsHandler {
 
     @Override
     public void logout() {
-        new LogoutScreen(context, loginHandler);
+        communicator.logout(context);
+
     }
 
     @Override
