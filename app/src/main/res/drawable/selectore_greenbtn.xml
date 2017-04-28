@@ -3,7 +3,7 @@
 
     <item android:color="@color/blue" android:state_pressed="true" /> <!-- pressed -->
 
-    <item android:color="@color/blue" android:state_selected="true" /> <!-- focused -->
+    <item android:color="@color/blue_press" android:state_selected="true" /> <!-- focused -->
 
     <item android:color="@color/blue" /> <!-- default -->
 

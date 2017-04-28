@@ -127,7 +127,6 @@
                         android:hint="@string/phonenumber"
                         android:inputType="number"
                         android:padding="@dimen/_10sdp"
-                        android:text="1800181812"
                         android:textColorHint="@color/hint_etxt"
                         android:textSize="@dimen/_12sdp" />
                 </LinearLayout>
@@ -146,7 +145,6 @@
                     android:paddingLeft="@dimen/_10sdp"
                     android:paddingRight="@dimen/_20sdp"
                     android:paddingTop="@dimen/_10sdp"
-                    android:text="121212"
                     android:textColorHint="@color/hint_etxt"
                     android:textSize="@dimen/_12sdp" />
 
@@ -171,7 +169,7 @@
                     custombtn:btnCornerRadiusRightBottom="8"
                     custombtn:btnCornerRadiusRightTop="8"
                     custombtn:btnDeafultColor="@color/blue"
-                    custombtn:btnPressColor="@color/blue"
+                    custombtn:btnPressColor="@color/blue_press"
                     custombtn:btnTextColor="@color/white"
                     custombtn:btnTextPress="@color/white" />
 
@@ -269,7 +267,7 @@
                     custombtn:btnCornerRadiusRightBottom="8"
                     custombtn:btnCornerRadiusRightTop="8"
                     custombtn:btnDeafultColor="@color/white"
-                    custombtn:btnPressColor="@color/white"
+                    custombtn:btnPressColor="@color/white_btn_press"
                     custombtn:btnTextColor="@color/blue"
                     custombtn:btnTextPress="@color/blue" />
 
@@ -292,7 +290,7 @@
                     custombtn:btnCornerRadiusRightBottom="8"
                     custombtn:btnCornerRadiusRightTop="8"
                     custombtn:btnDeafultColor="@color/blue"
-                    custombtn:btnPressColor="@color/blue"
+                    custombtn:btnPressColor="@color/blue_press"
                     custombtn:btnTextColor="@color/white"
                     custombtn:btnTextPress="@color/white" />
 
