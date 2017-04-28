@@ -12,6 +12,6 @@ public class urls {
     public static final String LIVE_DEV_URL = "http://mmc-apps.com/dev/wecards/api/" + API_VERSION;
     public static final String MMC_LIVE_URL = "http://mmc-apps.com/wecards/api/" + API_VERSION;
 
-    public static final String LIVE_BASIC_URL = LOCAL_URL;
+    public static final String LIVE_BASIC_URL = LIVE_DEV_URL;
 
 }
