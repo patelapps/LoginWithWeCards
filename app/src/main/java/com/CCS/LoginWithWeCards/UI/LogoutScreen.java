@@ -7,7 +7,6 @@ import android.content.SharedPreferences;
 import android.graphics.Rect;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.ViewGroup;
@@ -59,7 +58,7 @@ public class LogoutScreen extends Dialog implements LogoutHandler {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initControl();
-initDailogHeight();
+        initDailogHeight();
         logoutAPI();
     }
 
@@ -113,7 +112,7 @@ initDailogHeight();
         Window window = getWindow();
         window.getDecorView().getWindowVisibleDisplayFrame(displayRectangle);
         getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, (int) (displayRectangle.height() * 0.95f));
-        getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+//        getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
         setCanceledOnTouchOutside(false);
     }
 
@@ -136,6 +135,6 @@ initDailogHeight();
         if (progressDialogCustom != null) {
             progressDialogCustom.hide();
         }
-
+        dismiss();
     }
 }
