@@ -14,6 +14,9 @@ import com.CCS.LoginWithWeCards.API.RestClient;
 import com.CCS.LoginWithWeCards.CustomView.DialogProgress;
 import com.CCS.LoginWithWeCards.Model.LogoutRequest;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -47,6 +50,7 @@ public class CommunicatorHandler extends Communicator {
     private LogoutRequest logoutRequest;
     private APIResponse apiResponseHandler;
 
+    private JSONObject jsonObject;
 
     @Override
     public void connect(Activity activity, final LoginHandler loginHandler) {
@@ -57,8 +61,18 @@ public class CommunicatorHandler extends Communicator {
         loginWidthWecardsReceiver = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
-                if (loginHandler != null) {
-                    loginHandler.loginResult(intent.getStringExtra(DATA));
+                try {
+
+                    if (loginHandler != null) {
+                        SharedPreferences.Editor editor = preferences.edit();
+                        jsonObject = new JSONObject(intent.getStringExtra(DATA));
+                        editor.putString(USER_ID, jsonObject.getJSONObject(DATA).optString(USER_ID));
+                        editor.putString(LOGIN_TOKEN, jsonObject.getJSONObject(DATA).optString(LOGIN_TOKEN));
+                        editor.commit();
+                        loginHandler.loginResult(jsonObject.toString());
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
                 }
             }
         };
@@ -105,7 +119,7 @@ public class CommunicatorHandler extends Communicator {
                     Log.e(Tag, "fail" + response);
                 }
 
-                
+
                 hideProgress();
             }
 
