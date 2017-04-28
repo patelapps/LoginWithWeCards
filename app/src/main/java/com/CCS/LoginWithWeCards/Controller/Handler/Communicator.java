@@ -12,13 +12,5 @@ public abstract class Communicator {
 
     public abstract void disConnect(Activity activity);
 
-    public abstract void logout(Activity activity);
-
-    public abstract void logoutAPI();
-
-    public abstract void showProgress();
-
-
-    public abstract void hideProgress();
 
 }

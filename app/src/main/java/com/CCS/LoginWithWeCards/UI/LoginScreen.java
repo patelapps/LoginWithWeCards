@@ -45,7 +45,6 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-import static com.CCS.LoginWithWeCards.CustomView.ProgressDialogCustom.getProgressDialogCustom;
 import static com.CCS.LoginWithWeCards.Utils.AppContacts.COUNTRY_CODE_LIMIT;
 import static com.CCS.LoginWithWeCards.Utils.AppContacts.PHONE_NUMBER_LIMIT;
 import static com.CCS.LoginWithWeCards.Utils.AppContacts.Tag;
@@ -359,8 +358,7 @@ public class LoginScreen extends Dialog implements ScreenHandler {
     @Override
     public void showProgress() {
         if (progressDialogCustom == null) {
-//            progressDialogCustom = new ProgressDialogCustom(activity);
-            progressDialogCustom = getProgressDialogCustom(activity);
+            progressDialogCustom = new ProgressDialogCustom(activity);
         }
         progressDialogCustom.show();
     }
