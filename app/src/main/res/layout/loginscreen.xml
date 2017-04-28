@@ -40,157 +40,164 @@
                 android:textSize="@dimen/_16sdp" />
         </RelativeLayout>
 
-        <LinearLayout
-            android:id="@+id/llLogin"
+        <ScrollView
+            android:id="@+id/svLogin"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_alignParentBottom="true"
-            android:layout_below="@+id/rlTitle"
+            android:fillViewport="true">
 
-            android:layout_marginLeft="@dimen/_15sdp"
-            android:layout_marginRight="@dimen/_15sdp"
-
-            android:orientation="vertical"
-            android:visibility="visible">
-
-
-            <RelativeLayout
+            <LinearLayout
+                android:id="@+id/llLogin"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1.2">
+                android:layout_alignParentBottom="true"
+                android:layout_below="@+id/rlTitle"
+
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:layout_marginRight="@dimen/_15sdp"
+
+                android:orientation="vertical"
+                android:visibility="visible">
 
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:orientation="vertical">
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.2">
 
-                    <ImageView
-                        android:id="@+id/ivLoginAppIcon"
-                        android:layout_width="@dimen/_80sdp"
-                        android:layout_height="@dimen/_80sdp"
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
-                        android:layout_gravity="center"
-                        android:padding="@dimen/_4sdp"
-                        android:scaleType="fitXY"
-                        android:src="@mipmap/logo" />
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/ivLoginAppIcon"
+                            android:layout_width="@dimen/_80sdp"
+                            android:layout_height="@dimen/_80sdp"
+                            android:layout_centerInParent="true"
+                            android:layout_gravity="center"
+                            android:padding="@dimen/_4sdp"
+                            android:scaleType="fitXY"
+                            android:src="@mipmap/logo" />
 
 
-                    <TextView
-                        android:id="@+id/tvAppText"
+                        <TextView
+                            android:id="@+id/tvAppText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/loginwithmessage"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp" />
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+
+                    <LinearLayout
+                        android:id="@+id/act_login_country_code_num_llayout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="@string/loginwithmessage"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/_12sdp" />
-                </LinearLayout>
+                        android:orientation="horizontal"
+                        android:textSize="@dimen/_14sdp">
 
+                        <EditText
+                            android:id="@+id/etCountryCode"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/transparent"
+                            android:gravity="center"
+                            android:hint="@string/one_number"
+                            android:inputType="number"
+                            android:padding="@dimen/_10sdp"
+                            android:textColorHint="@color/hint_etxt"
+                            android:textSize="@dimen/_12sdp" />
 
-            </RelativeLayout>
-
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1">
-
-
-                <LinearLayout
-                    android:id="@+id/act_login_country_code_num_llayout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:textSize="@dimen/_14sdp">
+                        <EditText
+                            android:id="@+id/etPhoneNumber"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_1sdp"
+                            android:layout_weight="0.25"
+                            android:background="@color/transparent"
+                            android:hint="@string/phonenumber"
+                            android:inputType="number"
+                            android:padding="@dimen/_10sdp"
+                            android:textColorHint="@color/hint_etxt"
+                            android:textSize="@dimen/_12sdp" />
+                    </LinearLayout>
 
                     <EditText
-                        android:id="@+id/etCountryCode"
+                        android:id="@+id/etPasseord"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:background="@color/transparent"
-                        android:gravity="center"
-                        android:hint="@string/one_number"
-                        android:inputType="number"
-                        android:padding="@dimen/_10sdp"
+                        android:layout_below="@+id/act_login_country_code_num_llayout"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:background="@color/Gray97"
+                        android:hint="@string/password"
+                        android:imeOptions="actionGo"
+                        android:inputType="textPassword"
+                        android:paddingBottom="@dimen/_10sdp"
+                        android:paddingLeft="@dimen/_10sdp"
+                        android:paddingRight="@dimen/_20sdp"
+                        android:paddingTop="@dimen/_10sdp"
                         android:textColorHint="@color/hint_etxt"
                         android:textSize="@dimen/_12sdp" />
 
-                    <EditText
-                        android:id="@+id/etPhoneNumber"
+
+                    <com.CCS.LoginWithWeCards.CustomView.CustomBtn
+                        android:id="@+id/btnLogin"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/_1sdp"
-                        android:layout_weight="0.25"
+                        android:layout_below="@+id/etPasseord"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@color/blue"
+                        android:gravity="center"
+                        android:paddingBottom="@dimen/_5sdp"
+                        android:paddingTop="@dimen/_5sdp"
+                        android:text="@string/login"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_14sdp"
+                        custombtn:btnCornerRadiusLeftBottom="8"
+                        custombtn:btnCornerRadiusLeftTop="8"
+                        custombtn:btnCornerRadiusRightBottom="8"
+                        custombtn:btnCornerRadiusRightTop="8"
+                        custombtn:btnDeafultColor="@color/blue"
+                        custombtn:btnPressColor="@color/blue_press"
+                        custombtn:btnTextColor="@color/white"
+                        custombtn:btnTextPress="@color/white" />
+
+                    <Button
+                        android:id="@+id/btnCreateAccount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
                         android:background="@color/transparent"
-                        android:hint="@string/phonenumber"
-                        android:inputType="number"
+                        android:gravity="center"
                         android:padding="@dimen/_10sdp"
-                        android:textColorHint="@color/hint_etxt"
-                        android:textSize="@dimen/_12sdp" />
-                </LinearLayout>
+                        android:text="@string/createaccount"
+                        android:textAllCaps="false"
+                        android:textColor="@drawable/selectore_greenbtn"
+                        android:textSize="@dimen/_14sdp" />
 
-                <EditText
-                    android:id="@+id/etPasseord"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/act_login_country_code_num_llayout"
-                    android:layout_marginTop="@dimen/_3sdp"
-                    android:background="@color/Gray97"
-                    android:hint="@string/password"
-                    android:imeOptions="actionGo"
-                    android:inputType="textPassword"
-                    android:paddingBottom="@dimen/_10sdp"
-                    android:paddingLeft="@dimen/_10sdp"
-                    android:paddingRight="@dimen/_20sdp"
-                    android:paddingTop="@dimen/_10sdp"
-                    android:textColorHint="@color/hint_etxt"
-                    android:textSize="@dimen/_12sdp" />
+                </RelativeLayout>
 
 
-                <com.CCS.LoginWithWeCards.CustomView.CustomBtn
-                    android:id="@+id/btnLogin"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/etPasseord"
-                    android:layout_marginBottom="@dimen/_5sdp"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:background="@color/blue"
-                    android:gravity="center"
-                    android:paddingBottom="@dimen/_5sdp"
-                    android:paddingTop="@dimen/_5sdp"
-                    android:text="@string/login"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/_14sdp"
-                    custombtn:btnCornerRadiusLeftBottom="8"
-                    custombtn:btnCornerRadiusLeftTop="8"
-                    custombtn:btnCornerRadiusRightBottom="8"
-                    custombtn:btnCornerRadiusRightTop="8"
-                    custombtn:btnDeafultColor="@color/blue"
-                    custombtn:btnPressColor="@color/blue_press"
-                    custombtn:btnTextColor="@color/white"
-                    custombtn:btnTextPress="@color/white" />
-
-                <Button
-                    android:id="@+id/btnCreateAccount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_centerHorizontal="true"
-                    android:background="@color/transparent"
-                    android:gravity="center"
-                    android:padding="@dimen/_10sdp"
-                    android:text="@string/createaccount"
-                    android:textAllCaps="false"
-                    android:textColor="@drawable/selectore_greenbtn"
-                    android:textSize="@dimen/_14sdp" />
-
-            </RelativeLayout>
-
-
-        </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
 
 
         <RelativeLayout

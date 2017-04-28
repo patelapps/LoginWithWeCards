@@ -1,8 +1,10 @@
 package com.CCS.LoginWithWeCards.UI;
 
+import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Point;
 import android.graphics.Rect;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
@@ -22,6 +24,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -90,6 +93,8 @@ public class LoginScreen extends Dialog implements ScreenHandler {
     private APIResponse apiResponseHandler;
 
     private String apiResult = "";
+
+    private ScrollView svLogin;
 
     private DialogProgress progressDialogCustom;
 
@@ -180,6 +185,8 @@ public class LoginScreen extends Dialog implements ScreenHandler {
 
         llLogin = (LinearLayout) findViewById(R.id.llLogin);
         rlconfirm = (RelativeLayout) findViewById(R.id.rlconfirm);
+
+        svLogin = (ScrollView) findViewById(R.id.svLogin);
     }
 
     @Override
@@ -291,6 +298,31 @@ public class LoginScreen extends Dialog implements ScreenHandler {
                 openAppInPlayStore();
             }
         });
+
+
+          /*when click password field then scrool up to next button*/
+        etPhoneNumber.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus) {
+                    method_scrollView_move(etPasseord);
+                } else {
+                }
+            }
+        });
+    }
+
+    public void method_scrollView_move(EditText view) {
+        ObjectAnimator scrollup = ObjectAnimator.ofInt(svLogin, "scrollY", getPointOfView(view).y + view.getHeight());
+        scrollup.setDuration(800);
+        scrollup.start();
+    }
+
+    /*this method is use for get x and  y of view in screen*/
+    public Point getPointOfView(View view) {
+        int[] location = new int[2];
+        view.getLocationInWindow(location);
+        return new Point(location[0], location[1]);
     }
 
 

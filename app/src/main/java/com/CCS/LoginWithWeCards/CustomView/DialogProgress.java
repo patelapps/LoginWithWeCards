@@ -18,7 +18,8 @@ import uk.co.chrisjenx.calligraphy.CalligraphyTypefaceSpan;
  */
 
 public class DialogProgress extends ProgressDialog {
-    AppTypeface typeface;
+    private AppTypeface typeface;
+    private final String message = "Please Wait ...";
 
     public DialogProgress(Activity context) {
         super(context, getStyle());
@@ -26,12 +27,11 @@ public class DialogProgress extends ProgressDialog {
         typeface = new AppTypeface(context);
         setCancelable(false);
 
-        String message = "Please Wait ...";
         SpannableString spannableString = new SpannableString(message);
         CalligraphyTypefaceSpan typefaceSpan = new CalligraphyTypefaceSpan(typeface.getRegularFont());
         spannableString.setSpan(typefaceSpan, 0, message.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+
         setMessage(spannableString);
-        setCancelable(false);
     }
 
     private static int getStyle() {
