@@ -36,7 +36,6 @@ import com.CCS.LoginWithWeCards.Model.LoginRequest;
 import com.CCS.LoginWithWeCards.Model.RequestData;
 import com.CCS.LoginWithWeCards.R;
 import com.CCS.LoginWithWeCards.UI.Handler.ScreenHandler;
-import com.CCS.LoginWithWeCards.Utils.AppContacts;
 import com.CCS.LoginWithWeCards.Utils.AppTypeface;
 import com.CCS.LoginWithWeCards.Utils.Deprecation;
 import com.CCS.LoginWithWeCards.Utils.Validate;

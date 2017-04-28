@@ -7,16 +7,12 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.util.Log;
-import android.view.View;
 
 import com.CCS.LoginWithWeCards.API.Handler.APIResponse;
 import com.CCS.LoginWithWeCards.API.Handler.APIResponseHandler;
-import com.CCS.LoginWithWeCards.API.Handler.DataHandler;
 import com.CCS.LoginWithWeCards.API.RestClient;
 import com.CCS.LoginWithWeCards.CustomView.ProgressDialogCustom;
-import com.CCS.LoginWithWeCards.Model.LoginRequest;
 import com.CCS.LoginWithWeCards.Model.LogoutRequest;
-import com.CCS.LoginWithWeCards.R;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -62,7 +58,7 @@ public class CommunicatorHandler extends Communicator {
             @Override
             public void onReceive(Context context, Intent intent) {
                 if (loginHandler != null) {
-                    loginHandler.result(intent.getStringExtra(DATA));
+                    loginHandler.loginResult(intent.getStringExtra(DATA));
                 }
             }
         };
@@ -100,7 +96,7 @@ public class CommunicatorHandler extends Communicator {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 if (response.isSuccessful()) {
-                    loginHandler.result(apiResponseHandler.getResult(response));
+                    loginHandler.logoutResult(apiResponseHandler.getResult(response));
                     SharedPreferences.Editor editor = preferences.edit();
                     editor.putString(USER_ID, "");
                     editor.putString(LOGIN_TOKEN, "");

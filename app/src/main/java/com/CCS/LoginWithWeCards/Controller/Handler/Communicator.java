@@ -2,8 +2,6 @@ package com.CCS.LoginWithWeCards.Controller.Handler;
 
 import android.app.Activity;
 
-import com.CCS.LoginWithWeCards.Model.LogoutRequest;
-
 /**
  * Created by mauliksantoki on 26/4/17.
  */

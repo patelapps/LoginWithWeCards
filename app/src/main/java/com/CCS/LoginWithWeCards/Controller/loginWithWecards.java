@@ -10,7 +10,6 @@ import com.CCS.LoginWithWeCards.Controller.Handler.Communicator;
 import com.CCS.LoginWithWeCards.Controller.Handler.CommunicatorHandler;
 import com.CCS.LoginWithWeCards.Controller.Handler.LoginHandler;
 import com.CCS.LoginWithWeCards.Controller.Handler.loginWithWecardsHandler;
-import com.CCS.LoginWithWeCards.CustomView.ProgressDialogCustom;
 import com.CCS.LoginWithWeCards.UI.LoginScreen;
 import com.CCS.LoginWithWeCards.Utils.appInstalledOrNot;
 
@@ -40,25 +39,16 @@ public class loginWithWecards implements loginWithWecardsHandler {
     private LoginHandler loginHandler;
     private Communicator communicator;
 
-
-
-
-    public loginWithWecards(Activity context) {
+    public loginWithWecards(Activity context, LoginHandler loginListener) {
         this.context = context;
         communicator = new CommunicatorHandler();
         setAppIcon();
         setAppLoginID();
         setAppName();
         setAppPackageName();
-
-    }
-
-    @Keep
-    public void setLoginListener(LoginHandler loginListener) {
         this.loginHandler = loginListener;
         communicator.connect(context, loginHandler);
     }
-
 
     @Override
     public void setAppPackageName() {

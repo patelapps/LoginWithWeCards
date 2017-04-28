@@ -8,7 +8,9 @@ import android.support.annotation.Keep;
 @Keep
 public interface LoginHandler {
 
-    public void result(String Result);
+    public void loginResult(String Result);
+
+    public void logoutResult(String Result);
 
 
 }
