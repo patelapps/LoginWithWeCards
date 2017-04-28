@@ -104,15 +104,16 @@ public class CommunicatorHandler extends Communicator {
                 } else {
                     Log.e(Tag, "fail" + response);
                 }
+                hideProgress();
             }
 
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
                 Log.e(Tag, t.getMessage());
+                hideProgress();
             }
         });
 
-        hideProgress();
 
     }
 
