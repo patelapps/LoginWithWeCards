@@ -140,7 +140,8 @@ public class LoginScreen extends Dialog implements ScreenHandler {
         Rect displayRectangle = new Rect();
         Window window = getWindow();
         window.getDecorView().getWindowVisibleDisplayFrame(displayRectangle);
-        getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, (int) (displayRectangle.height() * 0.95f));
+//        getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, (int) (displayRectangle.height() * 0.95f));
+        getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT);
         getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
         setCanceledOnTouchOutside(false);
 
