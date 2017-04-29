@@ -54,3 +54,6 @@ loginWithWecards = new loginWithWecards(activity, new LoginHandler() {
 ## Application Screenshot
 ![](https://www.we.cards/theme/images/more-feature-mockup.png)
 
+## Download 
+* [![](https://www.we.cards/theme/images/more-feature-mockup.png)](http://arxiv.org/abs/1504.08083)
+
