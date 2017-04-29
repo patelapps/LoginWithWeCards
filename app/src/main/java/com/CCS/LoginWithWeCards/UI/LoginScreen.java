@@ -369,6 +369,9 @@ public class LoginScreen extends Dialog implements ScreenHandler {
         loginRequest.setPassword(etPasseord.getText().toString().trim());
         loginRequest.setPhone_number(etPhoneNumber.getText().toString().trim());
 
+
+        showErrorHandler(activity,loginRequest.getDevice_type());
+
         Call<ResponseBody> call = service.login(loginRequest);
         call.enqueue(new Callback<ResponseBody>() {
             @Override
