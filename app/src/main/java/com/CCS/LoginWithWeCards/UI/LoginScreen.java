@@ -321,12 +321,13 @@ public class LoginScreen extends Dialog implements ScreenHandler {
 
 
           /*when click password field then scrool up to next button*/
-        
+
 
         etPasseord.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, final boolean hasFocus) {
                 if (hasFocus) {
+                    svLogin.fullScroll(svLogin.FOCUS_UP);
                     method_scrollView_move();
                 }
             }
@@ -337,15 +338,14 @@ public class LoginScreen extends Dialog implements ScreenHandler {
         svLogin.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
-                new Handler().postDelayed(new Runnable() {
-                    @Override
+
+                svLogin.post(new Runnable() {
                     public void run() {
                         ObjectAnimator scrollup = ObjectAnimator.ofInt(svLogin, "scrollY", (svLogin.getBottom() - bottomScrollHeight));
                         scrollup.setDuration(1000);
                         scrollup.start();
                     }
-                }, 100);
-
+                });
             }
         });
 
