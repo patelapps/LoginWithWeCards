@@ -327,7 +327,6 @@ public class LoginScreen extends Dialog implements ScreenHandler {
             @Override
             public void onFocusChange(View v, final boolean hasFocus) {
                 if (hasFocus) {
-                    svLogin.fullScroll(svLogin.FOCUS_UP);
                     method_scrollView_move();
                 }
             }
