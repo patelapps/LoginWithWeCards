@@ -6,7 +6,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
-import android.provider.SyncStateContract;
 import android.util.Log;
 
 import com.CCS.LoginWithWeCards.API.Handler.APIResponse;
@@ -36,8 +35,6 @@ import static com.CCS.LoginWithWeCards.Utils.AppContacts.loginWithWecardKey;
  */
 
 public class CommunicatorHandler extends Communicator {
-
-
     private BroadcastReceiver loginWidthWecardsReceiver;
     IntentFilter filter;
 
@@ -74,6 +71,7 @@ public class CommunicatorHandler extends Communicator {
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
+                    Log.e("JSONException", e.getMessage());
                 }
             }
         };
