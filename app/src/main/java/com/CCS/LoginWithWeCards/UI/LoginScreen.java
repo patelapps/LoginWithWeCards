@@ -309,16 +309,9 @@ public class LoginScreen extends Dialog implements ScreenHandler {
         etPasseord.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, final boolean hasFocus) {
-                btnCreateAccount.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-                    @Override
-                    public void onGlobalLayout() {
-                        btnCreateAccount.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-                        if (hasFocus) {
-                            method_scrollView_move();
-                        }
-                    }
-                });
-
+                if (hasFocus) {
+                    method_scrollView_move();
+                }
             }
         });
     }
