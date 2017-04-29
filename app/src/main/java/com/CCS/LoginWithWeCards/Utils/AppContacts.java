@@ -26,4 +26,6 @@ public class AppContacts {
 
     public static final String PREFS_PRIVATE = "PREFS_PRIVATE";
 
+    public static final String CONTACT_US = "Any queries/feedback email to info@ccs.sg";
+
 }

@@ -1,15 +1,18 @@
 package com.CCS.LoginWithWeCards.CountryCodeInfo;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Build;
 import android.telephony.TelephonyManager;
 
 import com.CCS.LoginWithWeCards.R;
+import com.CCS.LoginWithWeCards.Utils.AppContacts;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+import static com.CCS.LoginWithWeCards.Utils.errorHandler.showErrorHandler;
 
 
 /**
@@ -17,11 +20,11 @@ import java.util.Locale;
  */
 
 public class CountryCodeInfoController {
-    private Context context;
+    private Activity context;
     private List<countryCodeWithNameModel> countryCodeInfoControllerListArray = new ArrayList<countryCodeWithNameModel>();
     private String[] info;
 
-    public CountryCodeInfoController(Context con) {
+    public CountryCodeInfoController(Activity con) {
         context = con;
         intArray();
     }
@@ -38,7 +41,7 @@ public class CountryCodeInfoController {
         }
     }
 
-    public List<countryCodeWithNameModel> getCountryArrayList(Context con) {
+    public List<countryCodeWithNameModel> getCountryArrayList(Activity con) {
         if (context == null) {
             context = con;
         }
@@ -84,6 +87,7 @@ public class CountryCodeInfoController {
 
             }
         } catch (Exception e) {
+            showErrorHandler(context, AppContacts.CONTACT_US);
         }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {

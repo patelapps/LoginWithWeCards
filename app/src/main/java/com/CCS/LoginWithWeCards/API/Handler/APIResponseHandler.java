@@ -26,6 +26,7 @@ import static com.CCS.LoginWithWeCards.API.jsonKeys.STATUS;
 import static com.CCS.LoginWithWeCards.API.jsonKeys.SUCCESS;
 import static com.CCS.LoginWithWeCards.API.jsonKeys.USER_ID;
 import static com.CCS.LoginWithWeCards.Utils.AppContacts.PREFS_PRIVATE;
+import static com.CCS.LoginWithWeCards.Utils.errorHandler.showErrorHandler;
 
 
 /**
@@ -56,6 +57,7 @@ public class APIResponseHandler extends APIResponse {
             }
         } catch (IOException e) {
             e.printStackTrace();
+
         }
 
         return stringBuilder.toString();
@@ -87,9 +89,7 @@ public class APIResponseHandler extends APIResponse {
 
         } catch (JSONException e) {
             e.printStackTrace();
-            Toast.makeText(activity, "please try again later...",
-                    Toast.LENGTH_LONG).show();
-            Log.e(AppContacts.Tag, e.getMessage());
+            showErrorHandler(activity, AppContacts.CONTACT_US);
         }
     }
 

@@ -9,7 +9,6 @@ import android.graphics.Rect;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.TextWatcher;
@@ -28,7 +27,6 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.CCS.LoginWithWeCards.API.Handler.APIResponse;
 import com.CCS.LoginWithWeCards.API.Handler.APIResponseHandler;
@@ -41,6 +39,7 @@ import com.CCS.LoginWithWeCards.Model.LoginRequest;
 import com.CCS.LoginWithWeCards.Model.RequestData;
 import com.CCS.LoginWithWeCards.R;
 import com.CCS.LoginWithWeCards.UI.Handler.ScreenHandler;
+import com.CCS.LoginWithWeCards.Utils.AppContacts;
 import com.CCS.LoginWithWeCards.Utils.AppTypeface;
 import com.CCS.LoginWithWeCards.Utils.Deprecation;
 import com.CCS.LoginWithWeCards.Utils.Validate;
@@ -57,6 +56,7 @@ import static com.CCS.LoginWithWeCards.Utils.AppContacts.loginWithAppIcon;
 import static com.CCS.LoginWithWeCards.Utils.AppContacts.loginWithAppName;
 import static com.CCS.LoginWithWeCards.Utils.AppContacts.wecardsAppPackage;
 import static com.CCS.LoginWithWeCards.Utils.Deprecation.getColor;
+import static com.CCS.LoginWithWeCards.Utils.errorHandler.showErrorHandler;
 import static com.CCS.LoginWithWeCards.Utils.isNetworkAvailable.isNetworkAvailable;
 import static com.CCS.LoginWithWeCards.Utils.setDrawableBackGround.setDrawableBackGround;
 
@@ -386,7 +386,7 @@ public class LoginScreen extends Dialog implements ScreenHandler {
                         }
                     });
                 } else {
-                    Log.e(Tag, "fail" + response);
+                    showErrorHandler(activity, AppContacts.CONTACT_US);
                 }
 
                 hideProgress();
@@ -459,8 +459,7 @@ public class LoginScreen extends Dialog implements ScreenHandler {
 
     @Override
     public void error(String message) {
-        Log.e(Tag, message);
-        Toast.makeText(activity, message, Toast.LENGTH_LONG).show();
+        showErrorHandler(activity, message);
     }
 
 }
