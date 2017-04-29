@@ -28,6 +28,14 @@ dependencies{
 ## Step 3. How To Use... 
 
 ``` java
+
+compileSdkVersion 25
+buildToolsVersion "25.0.2"
+  defaultConfig {
+    minSdkVersion 16
+    targetSdkVersion 25
+  }
+    
 private loginWithWecards loginWithWecards;
 
 loginWithWecards = new loginWithWecards(activity, new LoginHandler() {
