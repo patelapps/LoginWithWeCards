@@ -31,9 +31,9 @@ dependencies{
 
 compileSdkVersion 25
 buildToolsVersion "25.0.2"
-  defaultConfig {
-    minSdkVersion 16
-    targetSdkVersion 25
+defaultConfig {
+  minSdkVersion 16    
+  targetSdkVersion 25
   }
     
 private loginWithWecards loginWithWecards;
