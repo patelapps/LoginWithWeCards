@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.provider.SyncStateContract;
 import android.util.Log;
 
 import com.CCS.LoginWithWeCards.API.Handler.APIResponse;
@@ -58,11 +59,11 @@ public class CommunicatorHandler extends Communicator {
         filter = new IntentFilter();
         filter.addAction(loginWithWecardKey);
         this.loginHandler = loginHandler;
+        preferences = activity.getSharedPreferences(PREFS_PRIVATE, Context.MODE_PRIVATE);
         loginWidthWecardsReceiver = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
                 try {
-
                     if (loginHandler != null) {
                         SharedPreferences.Editor editor = preferences.edit();
                         jsonObject = new JSONObject(intent.getStringExtra(DATA));
