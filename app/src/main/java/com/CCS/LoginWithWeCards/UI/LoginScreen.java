@@ -331,9 +331,15 @@ public class LoginScreen extends Dialog implements ScreenHandler {
     }
 
     public void method_scrollView_move() {
-        ObjectAnimator scrollup = ObjectAnimator.ofInt(svLogin, "scrollY", (svLogin.getBottom() - bottomScrollHeight));
-        scrollup.setDuration(600);
-        scrollup.start();
+        svLogin.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                ObjectAnimator scrollup = ObjectAnimator.ofInt(svLogin, "scrollY", (svLogin.getBottom() - bottomScrollHeight));
+                scrollup.setDuration(600);
+                scrollup.start();
+            }
+        });
+
     }
 
     /*this method is use for get x and  y of view in screen*/
