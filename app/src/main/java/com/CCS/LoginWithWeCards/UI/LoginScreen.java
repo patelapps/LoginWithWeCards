@@ -202,7 +202,7 @@ public class LoginScreen extends Dialog implements ScreenHandler {
                 btnCreateAccount.getViewTreeObserver().removeOnGlobalLayoutListener(this);
                 bottomScrollHeight = btnCreateAccount.getHeight();
                 ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) btnCreateAccount.getLayoutParams();
-                bottomScrollHeight = bottomScrollHeight + marginLayoutParams.topMargin ;
+                bottomScrollHeight = bottomScrollHeight + marginLayoutParams.topMargin + marginLayoutParams.bottomMargin;
             }
         });
     }
@@ -320,7 +320,16 @@ public class LoginScreen extends Dialog implements ScreenHandler {
 
 
           /*when click password field then scrool up to next button*/
-        etPasseord.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+        etPhoneNumber.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, final boolean hasFocus) {
+                if (hasFocus) {
+                    method_scrollView_move();
+                }
+            }
+        });
+
+        etPhoneNumber.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, final boolean hasFocus) {
                 if (hasFocus) {
@@ -331,14 +340,14 @@ public class LoginScreen extends Dialog implements ScreenHandler {
     }
 
     public void method_scrollView_move() {
-//        svLogin.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-//            @Override
-//            public void onGlobalLayout() {
+        svLogin.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
                 ObjectAnimator scrollup = ObjectAnimator.ofInt(svLogin, "scrollY", (svLogin.getBottom() - bottomScrollHeight));
                 scrollup.setDuration(1000);
                 scrollup.start();
-//            }
-//        });
+            }
+        });
 
     }
 
