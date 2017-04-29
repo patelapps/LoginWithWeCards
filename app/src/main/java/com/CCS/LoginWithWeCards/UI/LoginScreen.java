@@ -133,7 +133,6 @@ public class LoginScreen extends Dialog implements ScreenHandler {
         loginRequestHandler = new RequestData();
     }
 
-    private int height = 0;
 
     @Override
     public void initDailogHeight() {
@@ -147,8 +146,6 @@ public class LoginScreen extends Dialog implements ScreenHandler {
         getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
         setCanceledOnTouchOutside(false);
 
-
-        height = (int) (displayRectangle.height() * 0.95f);
 
     }
 
@@ -193,14 +190,6 @@ public class LoginScreen extends Dialog implements ScreenHandler {
         rlconfirm = (RelativeLayout) findViewById(R.id.rlconfirm);
 
         svLogin = (ScrollView) findViewById(R.id.svLogin);
-
-//        ViewGroup.LayoutParams layoutParams = llLogin.getLayoutParams();
-//        layoutParams.height = height;
-//        llLogin.setLayoutParams(layoutParams);
-//
-//        layoutParams = rlconfirm.getLayoutParams();
-//        layoutParams.height = height;
-//        rlconfirm.setLayoutParams(layoutParams);
     }
 
     @Override
@@ -319,14 +308,14 @@ public class LoginScreen extends Dialog implements ScreenHandler {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if (hasFocus) {
-                    method_scrollView_move(etPasseord);
+                    method_scrollView_move(btnOK);
                 } else {
                 }
             }
         });
     }
 
-    public void method_scrollView_move(EditText view) {
+    public void method_scrollView_move(Button view) {
         ObjectAnimator scrollup = ObjectAnimator.ofInt(svLogin, "scrollY", getPointOfView(view).y + view.getHeight());
         scrollup.setDuration(800);
         scrollup.start();

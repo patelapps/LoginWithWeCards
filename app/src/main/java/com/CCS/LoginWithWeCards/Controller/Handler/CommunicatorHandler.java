@@ -13,6 +13,7 @@ import com.CCS.LoginWithWeCards.API.Handler.APIResponseHandler;
 import com.CCS.LoginWithWeCards.API.RestClient;
 import com.CCS.LoginWithWeCards.CustomView.DialogProgress;
 import com.CCS.LoginWithWeCards.Model.LogoutRequest;
+import com.CCS.LoginWithWeCards.Utils.AppContacts;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -71,7 +72,7 @@ public class CommunicatorHandler extends Communicator {
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
-                    Log.e("JSONException", e.getMessage());
+                    Log.e(AppContacts.Tag, "Contact to ");
                 }
             }
         };
