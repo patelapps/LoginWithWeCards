@@ -309,12 +309,12 @@ public class LoginScreen extends Dialog implements ScreenHandler {
         etPasseord.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, final boolean hasFocus) {
-                btnOK.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+                btnCreateAccount.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
                     @Override
                     public void onGlobalLayout() {
-                        btnOK.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                        btnCreateAccount.getViewTreeObserver().removeOnGlobalLayoutListener(this);
                         if (hasFocus) {
-                            method_scrollView_move(btnOK);
+                            method_scrollView_move();
                         }
                     }
                 });
@@ -323,10 +323,18 @@ public class LoginScreen extends Dialog implements ScreenHandler {
         });
     }
 
-    public void method_scrollView_move(Button view) {
-        ObjectAnimator scrollup = ObjectAnimator.ofInt(svLogin, "scrollY", getPointOfView(view).y + view.getHeight());
-        scrollup.setDuration(800);
-        scrollup.start();
+    public void method_scrollView_move() {
+        svLogin.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                svLogin.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                ViewGroup.MarginLayoutParams layoutParams = (ViewGroup.MarginLayoutParams) btnCreateAccount.getLayoutParams();
+                ObjectAnimator scrollup = ObjectAnimator.ofInt(svLogin, "scrollY", (svLogin.getBottom() - (btnCreateAccount.getHeight() + layoutParams.topMargin)));
+                scrollup.setDuration(800);
+                scrollup.start();
+            }
+        });
+
     }
 
     /*this method is use for get x and  y of view in screen*/
