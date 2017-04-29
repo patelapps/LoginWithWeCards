@@ -202,7 +202,7 @@ public class LoginScreen extends Dialog implements ScreenHandler {
                 btnCreateAccount.getViewTreeObserver().removeOnGlobalLayoutListener(this);
                 bottomScrollHeight = btnCreateAccount.getHeight();
                 ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) btnCreateAccount.getLayoutParams();
-                bottomScrollHeight = bottomScrollHeight + marginLayoutParams.topMargin + marginLayoutParams.bottomMargin;
+                bottomScrollHeight = bottomScrollHeight + marginLayoutParams.topMargin ;
             }
         });
     }
