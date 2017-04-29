@@ -221,8 +221,6 @@ public class LoginScreen extends Dialog implements ScreenHandler {
         btnCancel.setTypeface(appTypeface.getRegularFont());
         btnOK.setTypeface(appTypeface.getRegularFont());
 
-        etPhoneNumber.requestFocus();
-
     }
 
     @Override
