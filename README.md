@@ -6,7 +6,7 @@
 
 WeCards is a convenient and easy way to create, store, receive and share electronic business cards with your most updated contact information, allowing you to be contactable as and when you want.
 
-## Step 1. Add the JitPack repository to your build file
+## Step 1. Add the JitPack repository to your build file...
 * Add it in your root build.gradle at the end of repositories:
 
 ``` java
@@ -17,15 +17,15 @@ allprojects {
 }
 ```
 
-## Step 2. Add the dependency
-
+## Step 2. Add the dependency...
+* Add it in your module build.gradle at dependencies:
 ``` java
 dependencies{
    compile 'com.github.User:Repo:Tag'
    }
 ```
 
-## Usage 
+## Step 3. How To user... 
 
 ``` java
 private loginWithWecards loginWithWecards;
