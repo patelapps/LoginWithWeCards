@@ -18,7 +18,7 @@ allprojects {
 ```
 
 ## Step 2. Add the dependency...
-* Add it in your module build.gradle at dependencies:
+* Add it in your module build.gradle dependencies:
 ``` java
 dependencies{
    compile 'com.github.User:Repo:Tag'
