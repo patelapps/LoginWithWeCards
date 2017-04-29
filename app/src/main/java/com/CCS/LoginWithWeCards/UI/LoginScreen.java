@@ -331,14 +331,14 @@ public class LoginScreen extends Dialog implements ScreenHandler {
     }
 
     public void method_scrollView_move() {
-        svLogin.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-            @Override
-            public void onGlobalLayout() {
+//        svLogin.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+//            @Override
+//            public void onGlobalLayout() {
                 ObjectAnimator scrollup = ObjectAnimator.ofInt(svLogin, "scrollY", (svLogin.getBottom() - bottomScrollHeight));
                 scrollup.setDuration(1000);
                 scrollup.start();
-            }
-        });
+//            }
+//        });
 
     }
 
