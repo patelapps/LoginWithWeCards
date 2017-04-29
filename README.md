@@ -52,4 +52,4 @@ loginWithWecards = new loginWithWecards(activity, new LoginHandler() {
 ```
 
 ## Application Screenshot
-![](https://www.we.cards/theme/images/more-feature-mockup.png)
+![](https://www.we.cards/theme/images/more-feature-mockup.png)(https://github.com/tzutalin/dlib-android) + [FastRCNN](https://github.com/rbgirshick/caffe-fast-rcnn)
