@@ -335,7 +335,7 @@ public class LoginScreen extends Dialog implements ScreenHandler {
             @Override
             public void onGlobalLayout() {
                 ObjectAnimator scrollup = ObjectAnimator.ofInt(svLogin, "scrollY", (svLogin.getBottom() - bottomScrollHeight));
-                scrollup.setDuration(600);
+                scrollup.setDuration(1000);
                 scrollup.start();
             }
         });
