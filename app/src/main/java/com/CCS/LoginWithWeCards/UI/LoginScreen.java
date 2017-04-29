@@ -16,6 +16,7 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.view.Window;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
@@ -303,14 +304,21 @@ public class LoginScreen extends Dialog implements ScreenHandler {
         });
 
 
+
           /*when click password field then scrool up to next button*/
-        etPhoneNumber.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+        etPasseord.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (hasFocus) {
-                    method_scrollView_move(btnOK);
-                } else {
-                }
+            public void onFocusChange(View v, final boolean hasFocus) {
+                btnOK.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+                    @Override
+                    public void onGlobalLayout() {
+                        btnOK.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                        if (hasFocus) {
+                            method_scrollView_move(btnOK);
+                        }
+                    }
+                });
+
             }
         });
     }
