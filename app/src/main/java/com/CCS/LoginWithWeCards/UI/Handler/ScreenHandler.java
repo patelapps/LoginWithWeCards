@@ -29,4 +29,6 @@ public interface ScreenHandler {
     public boolean validation();
 
     public void error(String message);
+
+    public void scrollUpDialog();
 }

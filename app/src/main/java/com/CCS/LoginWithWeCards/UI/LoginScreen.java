@@ -43,17 +43,23 @@ import com.CCS.LoginWithWeCards.Utils.AppContacts;
 import com.CCS.LoginWithWeCards.Utils.AppTypeface;
 import com.CCS.LoginWithWeCards.Utils.Deprecation;
 import com.CCS.LoginWithWeCards.Utils.Validate;
+import com.CCS.LoginWithWeCards.Utils.appInstalledOrNot;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static com.CCS.LoginWithWeCards.API.jsonKeys.API_KEY;
+import static com.CCS.LoginWithWeCards.API.jsonKeys.PACKAGENAME;
 import static com.CCS.LoginWithWeCards.Utils.AppContacts.COUNTRY_CODE_LIMIT;
 import static com.CCS.LoginWithWeCards.Utils.AppContacts.PHONE_NUMBER_LIMIT;
 import static com.CCS.LoginWithWeCards.Utils.AppContacts.Tag;
+import static com.CCS.LoginWithWeCards.Utils.AppContacts.loginActvity;
 import static com.CCS.LoginWithWeCards.Utils.AppContacts.loginWithAppIcon;
 import static com.CCS.LoginWithWeCards.Utils.AppContacts.loginWithAppName;
+import static com.CCS.LoginWithWeCards.Utils.AppContacts.loginWithAppPackageName;
+import static com.CCS.LoginWithWeCards.Utils.AppContacts.loginWithWecardKey;
 import static com.CCS.LoginWithWeCards.Utils.AppContacts.wecardsAppPackage;
 import static com.CCS.LoginWithWeCards.Utils.Deprecation.getColor;
 import static com.CCS.LoginWithWeCards.Utils.errorHandler.showErrorHandler;
@@ -146,7 +152,6 @@ public class LoginScreen extends Dialog implements ScreenHandler {
         Rect displayRectangle = new Rect();
         Window window = getWindow();
         window.getDecorView().getWindowVisibleDisplayFrame(displayRectangle);
-//        getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, (int) (displayRectangle.height() * 0.95f));
         getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
         setCanceledOnTouchOutside(false);
@@ -326,13 +331,14 @@ public class LoginScreen extends Dialog implements ScreenHandler {
             @Override
             public void onFocusChange(View v, final boolean hasFocus) {
                 if (hasFocus) {
-                    method_scrollView_move();
+                    scrollUpDialog();
                 }
             }
         });
     }
 
-    public void method_scrollView_move() {
+    @Override
+    public void scrollUpDialog() {
         svLogin.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
@@ -349,13 +355,6 @@ public class LoginScreen extends Dialog implements ScreenHandler {
 
     }
 
-    /*this method is use for get x and  y of view in screen*/
-    public Point getPointOfView(View view) {
-        int[] location = new int[2];
-        view.getLocationInWindow(location);
-        return new Point(location[0], location[1]);
-    }
-
 
     @Override
     public void APICall() {
@@ -368,9 +367,6 @@ public class LoginScreen extends Dialog implements ScreenHandler {
         loginRequest.setCountry_code(etCountryCode.getText().toString().trim().replace("+", ""));
         loginRequest.setPassword(etPasseord.getText().toString().trim());
         loginRequest.setPhone_number(etPhoneNumber.getText().toString().trim());
-
-
-        showErrorHandler(activity,loginRequest.getDevice_type());
 
         Call<ResponseBody> call = service.login(loginRequest);
         call.enqueue(new Callback<ResponseBody>() {
@@ -414,9 +410,18 @@ public class LoginScreen extends Dialog implements ScreenHandler {
 
     @Override
     public void openAppInPlayStore() {
-        try {
-            activity.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + wecardsAppPackage)));
-        } catch (android.content.ActivityNotFoundException anfe) {
+        if (appInstalledOrNot.appInstalledOrNot(wecardsAppPackage, activity)) {
+            /*
+            * if application  install that time this message call
+            */
+            Intent loginWithWecards = new Intent(loginActvity);
+            loginWithWecards.putExtra(API_KEY, loginWithWecardKey);
+            loginWithWecards.putExtra(PACKAGENAME, loginWithAppPackageName);
+            activity.startActivity(loginWithWecards);
+        } else {
+           /*
+            * if application  not install that time this message call
+            */
             activity.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + wecardsAppPackage)));
         }
     }
