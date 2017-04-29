@@ -330,7 +330,7 @@ public class LoginScreen extends Dialog implements ScreenHandler {
             }
         });
 
-        etPhoneNumber.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+        etPasseord.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, final boolean hasFocus) {
                 if (hasFocus) {
