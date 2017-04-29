@@ -55,5 +55,6 @@ loginWithWecards = new loginWithWecards(activity, new LoginHandler() {
 ![](https://www.we.cards/theme/images/more-feature-mockup.png)
 
 ## Download 
-* [App Store](https://itunes.apple.com/app/wecards/id1154071458?ls=1&amp)  * [Play Store](https://itunes.apple.chttps://play.google.com/store/apps/details?id=com.CCS.WeCards)
+* [Download Wecards From App Store](https://itunes.apple.com/app/wecards/id1154071458?ls=1&amp)  
+* [Download Wecards From Play Store](https://itunes.apple.chttps://play.google.com/store/apps/details?id=com.CCS.WeCards)
 
