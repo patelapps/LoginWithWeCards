@@ -25,7 +25,7 @@ dependencies{
    }
 ```
 
-## Step 3. How To user... 
+## Step 3. How To Use... 
 
 ``` java
 private loginWithWecards loginWithWecards;
