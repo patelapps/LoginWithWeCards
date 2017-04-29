@@ -104,6 +104,9 @@ public class LoginScreen extends Dialog implements ScreenHandler {
 
     private LoginRequestHandler loginRequestHandler;
 
+
+    private int bottomScrollHeight = 0;
+
     public LoginScreen(Activity activity) {
         super(activity);
         this.activity = activity;
@@ -191,6 +194,17 @@ public class LoginScreen extends Dialog implements ScreenHandler {
         rlconfirm = (RelativeLayout) findViewById(R.id.rlconfirm);
 
         svLogin = (ScrollView) findViewById(R.id.svLogin);
+
+
+        btnCreateAccount.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                btnCreateAccount.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                bottomScrollHeight = btnCreateAccount.getHeight();
+                ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) btnCreateAccount.getLayoutParams();
+                bottomScrollHeight = bottomScrollHeight + marginLayoutParams.topMargin + marginLayoutParams.bottomMargin;
+            }
+        });
     }
 
     @Override
@@ -317,17 +331,9 @@ public class LoginScreen extends Dialog implements ScreenHandler {
     }
 
     public void method_scrollView_move() {
-        svLogin.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-            @Override
-            public void onGlobalLayout() {
-                svLogin.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-                ViewGroup.MarginLayoutParams layoutParams = (ViewGroup.MarginLayoutParams) btnCreateAccount.getLayoutParams();
-                ObjectAnimator scrollup = ObjectAnimator.ofInt(svLogin, "scrollY", (svLogin.getBottom() - (btnCreateAccount.getHeight() + layoutParams.topMargin)));
-                scrollup.setDuration(800);
-                scrollup.start();
-            }
-        });
-
+        ObjectAnimator scrollup = ObjectAnimator.ofInt(svLogin, "scrollY", (svLogin.getBottom() - bottomScrollHeight));
+        scrollup.setDuration(600);
+        scrollup.start();
     }
 
     /*this method is use for get x and  y of view in screen*/
