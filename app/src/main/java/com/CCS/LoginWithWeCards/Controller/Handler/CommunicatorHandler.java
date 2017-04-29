@@ -64,8 +64,8 @@ public class CommunicatorHandler extends Communicator {
                     if (loginHandler != null) {
                         SharedPreferences.Editor editor = preferences.edit();
                         jsonObject = new JSONObject(intent.getStringExtra(DATA));
-                        editor.putString(USER_ID, jsonObject.getJSONObject(DATA).optString(USER_ID));
-                        editor.putString(LOGIN_TOKEN, jsonObject.getJSONObject(DATA).optString(LOGIN_TOKEN));
+                        editor.putString(USER_ID, jsonObject.optString(USER_ID));
+                        editor.putString(LOGIN_TOKEN, jsonObject.optString(LOGIN_TOKEN));
                         editor.commit();
                         loginHandler.loginResult(jsonObject.toString());
                     }
