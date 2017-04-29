@@ -321,14 +321,7 @@ public class LoginScreen extends Dialog implements ScreenHandler {
 
 
           /*when click password field then scrool up to next button*/
-        etPhoneNumber.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, final boolean hasFocus) {
-                if (hasFocus) {
-                    method_scrollView_move();
-                }
-            }
-        });
+        
 
         etPasseord.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
