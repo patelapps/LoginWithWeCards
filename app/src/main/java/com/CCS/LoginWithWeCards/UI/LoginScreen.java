@@ -180,6 +180,7 @@ public class LoginScreen extends Dialog implements ScreenHandler {
 
 
         etCountryCode.setText("+" + countryCodeInfoController.getUserCountryCode().getDialingCode());
+        etCountryCode.setSelection(etCountryCode.getText().toString().trim().length());
 
         etCountryCode.setFilters(new InputFilter[]{new InputFilter.LengthFilter(COUNTRY_CODE_LIMIT)});
         etPhoneNumber.setFilters(new InputFilter[]{new InputFilter.LengthFilter(PHONE_NUMBER_LIMIT)});
