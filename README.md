@@ -21,7 +21,7 @@ allprojects {
 * Add it in your module build.gradle dependencies:
 ``` java
 dependencies{
-   compile 'com.github.User:Repo:Tag'
+     compile 'com.github.patelapps:LoginWithWeCards:1.3.55'
    }
 ```
 
