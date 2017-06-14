@@ -1,6 +1,5 @@
 apply plugin: 'com.android.library'
 
-
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
@@ -22,6 +21,4 @@ dependencies {
     compile 'com.squareup.retrofit2:retrofit:2.2.0'
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
     compile 'uk.co.chrisjenx:calligraphy:2.2.0'
-
-
 }

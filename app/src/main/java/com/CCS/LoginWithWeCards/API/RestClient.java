@@ -14,7 +14,6 @@ import retrofit2.http.POST;
 public class RestClient {
 
     private static GitApiInterface gitApiInterface;
-
     public static GitApiInterface getClient() {
         if (gitApiInterface == null) {
             Retrofit client = new Retrofit.Builder()
@@ -27,12 +26,6 @@ public class RestClient {
         }
         return gitApiInterface;
     }
-
-//    public interface GitApiInterface {
-//        @POST("open/user/login")
-//        Call<ResponseBody> login(@Body LoginRequest body);
-//    }
-
 
     public interface GitApiInterface {
         @POST("open/user/login")

@@ -35,7 +35,6 @@ import static com.CCS.LoginWithWeCards.Utils.errorHandler.showErrorHandler;
 
 public class APIResponseHandler extends APIResponse {
 
-
     private BufferedReader bufferedReader;
     private StringBuilder stringBuilder;
     private String line;

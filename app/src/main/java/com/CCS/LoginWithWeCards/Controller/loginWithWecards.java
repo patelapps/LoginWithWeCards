@@ -48,6 +48,7 @@ public class loginWithWecards implements loginWithWecardsHandler {
         setAppPackageName();
         this.loginHandler = loginListener;
         communicator.connect(context, loginHandler);
+
     }
 
     @Override
