@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custombtn="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/_10sdp"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/_5sdp"
+        android:background="@color/white">
+
+
+        <RelativeLayout
+            android:id="@+id/rlTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:background="@color/blue">
+
+            <ImageView
+                android:id="@+id/ivTitleAppIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_30sdp"
+                android:src="@mipmap/logo" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:padding="@dimen/_10sdp"
+                android:text="@string/wecards"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_16sdp" />
+        </RelativeLayout>
+
+        <ScrollView
+            android:id="@+id/svLogin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/rlTitle">
+
+            <LinearLayout
+                android:id="@+id/llLogin"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@+id/rlTitle"
+
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:layout_marginRight="@dimen/_15sdp"
+
+                android:orientation="vertical"
+                android:visibility="visible">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.2">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="@dimen/_30sdp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/ivLoginAppIcon"
+                            android:layout_width="@dimen/_80sdp"
+                            android:layout_height="@dimen/_80sdp"
+                            android:layout_centerInParent="true"
+                            android:layout_gravity="center"
+                            android:padding="@dimen/_4sdp"
+                            android:scaleType="fitXY"
+                            android:src="@mipmap/logo" />
+
+
+                        <TextView
+                            android:id="@+id/tvAppText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:gravity="center"
+                            android:text="@string/loginwithmessage"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp" />
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_weight="1">
+
+
+                    <LinearLayout
+                        android:id="@+id/act_login_country_code_num_llayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:textSize="@dimen/_14sdp">
+
+                        <EditText
+                            android:id="@+id/etCountryCode"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/transparent"
+                            android:gravity="center"
+                            android:hint="@string/one_number"
+                            android:inputType="number"
+                            android:padding="@dimen/_10sdp"
+                            android:textColorHint="@color/hint_etxt"
+                            android:textSize="@dimen/_12sdp" />
+
+                        <EditText
+                            android:id="@+id/etPhoneNumber"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_1sdp"
+                            android:layout_weight="0.25"
+                            android:background="@color/transparent"
+                            android:hint="@string/phonenumber"
+                            android:inputType="number"
+                            android:padding="@dimen/_10sdp"
+                            android:textColorHint="@color/hint_etxt"
+                            android:textSize="@dimen/_12sdp" />
+                    </LinearLayout>
+
+                    <EditText
+                        android:id="@+id/etPasseord"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/act_login_country_code_num_llayout"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:background="@color/Gray97"
+                        android:hint="@string/password"
+                        android:imeOptions="actionGo"
+                        android:inputType="textPassword"
+                        android:paddingBottom="@dimen/_10sdp"
+                        android:paddingLeft="@dimen/_10sdp"
+                        android:paddingRight="@dimen/_20sdp"
+                        android:paddingTop="@dimen/_10sdp"
+                        android:textColorHint="@color/hint_etxt"
+                        android:textSize="@dimen/_12sdp" />
+
+
+                    <com.CCS.LoginWithWeCards.CustomView.CustomBtn
+                        android:id="@+id/btnLogin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/etPasseord"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@color/blue"
+                        android:gravity="center"
+                        android:paddingBottom="@dimen/_5sdp"
+                        android:paddingTop="@dimen/_5sdp"
+                        android:text="@string/login"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_14sdp"
+                        custombtn:btnCornerRadiusLeftBottom="8"
+                        custombtn:btnCornerRadiusLeftTop="8"
+                        custombtn:btnCornerRadiusRightBottom="8"
+                        custombtn:btnCornerRadiusRightTop="8"
+                        custombtn:btnDeafultColor="@color/blue"
+                        custombtn:btnPressColor="@color/blue_press"
+                        custombtn:btnTextColor="@color/white"
+                        custombtn:btnTextPress="@color/white" />
+
+                    <Button
+                        android:id="@+id/btnCreateAccount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_below="@+id/btnLogin"
+                        android:layout_centerHorizontal="true"
+                        android:layout_margin="@dimen/_20sdp"
+                        android:background="@color/transparent"
+                        android:gravity="center"
+                        android:padding="@dimen/_10sdp"
+                        android:text="@string/createaccount"
+                        android:textAllCaps="false"
+                        android:textColor="@drawable/selectore_greenbtn"
+                        android:textSize="@dimen/_14sdp" />
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+        </ScrollView>
+
+
+        <RelativeLayout
+            android:id="@+id/rlconfirm"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@+id/rlTitle"
+            android:visibility="gone">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/llBtn"
+                android:background="@color/white">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/ivConfirmAppIcon"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_80sdp"
+                        android:layout_centerInParent="true"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/logo" />
+
+                    <TextView
+                        android:id="@+id/tvMessage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:gravity="center_horizontal"
+                        android:text="@string/comdirmwithmessage"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_14sdp" />
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/llBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:padding="@dimen/_10sdp">
+
+                <com.CCS.LoginWithWeCards.CustomView.CustomBtn
+                    android:id="@+id/btnCancel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="2dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingBottom="@dimen/_5sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:text="@string/cancel"
+                    android:textAllCaps="false"
+                    android:textSize="@dimen/_15sdp"
+                    custombtn:btnBorderCOlor="@color/blue"
+                    custombtn:btnBorderSize="2"
+                    custombtn:btnCornerRadiusLeftBottom="8"
+                    custombtn:btnCornerRadiusLeftTop="8"
+                    custombtn:btnCornerRadiusRightBottom="8"
+                    custombtn:btnCornerRadiusRightTop="8"
+                    custombtn:btnDeafultColor="@color/white"
+                    custombtn:btnPressColor="@color/white_btn_press"
+                    custombtn:btnTextColor="@color/blue"
+                    custombtn:btnTextPress="@color/blue" />
+
+                <com.CCS.LoginWithWeCards.CustomView.CustomBtn
+                    android:id="@+id/btnOK"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingBottom="@dimen/_5sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:text="@string/ok"
+                    android:textAllCaps="false"
+                    android:textSize="@dimen/_15sdp"
+                    custombtn:btnBorderCOlor="@color/blue"
+                    custombtn:btnBorderSize="2"
+                    custombtn:btnCornerRadiusLeftBottom="8"
+                    custombtn:btnCornerRadiusLeftTop="8"
+                    custombtn:btnCornerRadiusRightBottom="8"
+                    custombtn:btnCornerRadiusRightTop="8"
+                    custombtn:btnDeafultColor="@color/blue"
+                    custombtn:btnPressColor="@color/blue_press"
+                    custombtn:btnTextColor="@color/white"
+                    custombtn:btnTextPress="@color/white" />
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+    <ImageView
+        android:id="@+id/ivClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/circle_bg_white"
+        android:src="@mipmap/close" />
+
+</RelativeLayout>
