@@ -14,6 +14,7 @@ import retrofit2.http.POST;
 
 public class RestClient {
 
+    
     private static GitApiInterface gitApiInterface;
 
     public static GitApiInterface getClient() {
