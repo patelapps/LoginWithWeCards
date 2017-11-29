@@ -21,7 +21,7 @@ allprojects {
 * Add it in your module build.gradle dependencies:
 ``` java
 dependencies{
-     compile 'com.github.patelapps:LoginWithWeCards:1.3.52'
+      compile 'com.github.CCSGRP:LoginWithWecards:1.1'
    }
 ```
 
