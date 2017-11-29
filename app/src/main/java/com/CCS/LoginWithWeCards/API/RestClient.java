@@ -1,5 +1,6 @@
 package com.CCS.LoginWithWeCards.API;
 
+
 import com.CCS.LoginWithWeCards.Model.LoginRequest;
 import com.CCS.LoginWithWeCards.Model.LogoutRequest;
 
@@ -14,6 +15,7 @@ import retrofit2.http.POST;
 public class RestClient {
 
     private static GitApiInterface gitApiInterface;
+
     public static GitApiInterface getClient() {
         if (gitApiInterface == null) {
             Retrofit client = new Retrofit.Builder()
@@ -31,7 +33,7 @@ public class RestClient {
         @POST("open/user/login")
         Call<ResponseBody> login(@Body LoginRequest body);
 
-        @POST(" open/user/logout")
+        @POST("open/user/logout")
         Call<ResponseBody> logout(@Body LogoutRequest body);
     }
 }
