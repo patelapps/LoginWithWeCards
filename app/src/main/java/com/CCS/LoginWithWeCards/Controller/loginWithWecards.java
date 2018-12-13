@@ -2,7 +2,7 @@ package com.CCS.LoginWithWeCards.Controller;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.annotation.Keep;
+import androidx.annotation.Keep;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -35,9 +35,9 @@ import static com.CCS.LoginWithWeCards.Utils.getResources.getString;
 @Keep
 public class loginWithWecards implements loginWithWecardsHandler {
 
-    private Activity context;
-    private LoginHandler loginHandler;
-    private Communicator communicator;
+    private final Activity context;
+    private final LoginHandler loginHandler;
+    private final Communicator communicator;
 
     public loginWithWecards(Activity context, LoginHandler loginListener) {
         this.context = context;
@@ -92,6 +92,7 @@ public class loginWithWecards implements loginWithWecardsHandler {
             * if application  not install that time this message call
             */
             new LoginScreen(context);
+//            context.startActivity(new Intent(context, LoginScreen.class));
         }
     }
 

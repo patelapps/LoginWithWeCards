@@ -37,7 +37,7 @@ import static com.CCS.LoginWithWeCards.Utils.AppContacts.loginWithWecardKey;
 
 public class CommunicatorHandler extends Communicator {
     private BroadcastReceiver loginWidthWecardsReceiver;
-    IntentFilter filter;
+    private IntentFilter filter;
 
     private Activity activity;
 
@@ -67,7 +67,7 @@ public class CommunicatorHandler extends Communicator {
                         jsonObject = new JSONObject(intent.getStringExtra(DATA));
                         editor.putString(USER_ID, jsonObject.optString(USER_ID));
                         editor.putString(LOGIN_TOKEN, jsonObject.optString(LOGIN_TOKEN));
-                        editor.commit();
+                        editor.apply();
                         loginHandler.loginResult(jsonObject.toString());
                     }
                 } catch (JSONException e) {
@@ -114,7 +114,7 @@ public class CommunicatorHandler extends Communicator {
                     SharedPreferences.Editor editor = preferences.edit();
                     editor.putString(USER_ID, "");
                     editor.putString(LOGIN_TOKEN, "");
-                    editor.commit();
+                    editor.apply();
                 } else {
                     Log.e(Tag, "fail" + response);
                 }

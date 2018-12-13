@@ -4,7 +4,7 @@ package com.CCS.LoginWithWeCards.API;
  * Created by mauliksantoki on 24/4/17.
  */
 
-public class urls {
+class urls {
 
     public static final String API_VERSION = "v1_1/";
     public static final String LOCAL_URL = "http://192.168.0.2/wecards/api/";

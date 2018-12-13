@@ -9,13 +9,13 @@ import android.graphics.Typeface;
 
 public class AppTypeface {
 
-    public Typeface regularFont;
+    private Typeface regularFont;
 
 
-    public static final String REGULAR_FONT = "Muli.ttf";
+    private static final String REGULAR_FONT = "Muli.ttf";
 
 
-    public Activity activity;
+    private final Activity activity;
 
     public AppTypeface(Activity act) {
         activity = act;

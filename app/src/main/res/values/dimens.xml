@@ -1,2 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+
+    <dimen name="view_space_start_end_app_space">16dp</dimen>
+    <dimen name="size_tv_screen_title">24sp</dimen>
+    <dimen name="size_tv_reg">14sp</dimen>
+    <dimen name="size_tv_btn">16sp</dimen>
+    <dimen name="size_tv_create_ac">16sp</dimen>
+    <dimen name="height_divider">1dp</dimen>
+    <dimen name="view_space_screen_title">30dp</dimen>
+    <dimen name="view_space_to_con_with">5dp</dimen>
+    <dimen name="view_space_et_top">40dp</dimen>
+    <dimen name="pad_btn_top_bottom">4dp</dimen>
+    <dimen name="pad_btn_top_bottom_large">5dp</dimen>
+    <dimen name="pad_btn_start_end">16dp</dimen>
+    <dimen name="zero">0dp</dimen>
+    <dimen name="size_confirm_logo">100dp</dimen>
+    <dimen name="width_country_code">50dp</dimen>
+    <dimen name="view_space_privacy">50dp</dimen>
+    <dimen name="btn_radius">5dp</dimen>
+    <dimen name="height_btn_default">15dp</dimen>
+</resources>

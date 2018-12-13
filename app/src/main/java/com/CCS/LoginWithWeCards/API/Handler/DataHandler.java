@@ -5,5 +5,5 @@ package com.CCS.LoginWithWeCards.API.Handler;
  */
 
 public interface DataHandler {
-    public void getData(String data, String message);
+    void getData(String data, String message);
 }

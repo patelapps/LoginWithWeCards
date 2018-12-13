@@ -21,18 +21,17 @@ import static com.CCS.LoginWithWeCards.Utils.errorHandler.showErrorHandler;
 
 public class CountryCodeInfoController {
     private Activity context;
-    private List<countryCodeWithNameModel> countryCodeInfoControllerListArray = new ArrayList<countryCodeWithNameModel>();
-    private String[] info;
+    private final List<countryCodeWithNameModel> countryCodeInfoControllerListArray = new ArrayList<>();
 
     public CountryCodeInfoController(Activity con) {
         context = con;
         intArray();
     }
 
-    public void intArray() {
+    private void intArray() {
         String[] rl = context.getResources().getStringArray(R.array.fullCountryInfo);
         for (String s : rl) {
-            info = s.split(",", 3);
+            String[] info = s.split(",", 3);
             countryCodeInfoControllerListArray.add(new countryCodeWithNameModel(
                     info[0],
                     info[1],
@@ -52,7 +51,7 @@ public class CountryCodeInfoController {
         return countryCodeInfoControllerListArray;
     }
 
-    public countryCodeWithNameModel getData(String value) {
+    private countryCodeWithNameModel getData(String value) {
         if (value != null) {
             for (countryCodeWithNameModel model : countryCodeInfoControllerListArray) {
                 if (model.getDialingCode().equalsIgnoreCase(value) || model.getIsoCode().equalsIgnoreCase(value)) {

@@ -2,13 +2,13 @@ package com.CCS.LoginWithWeCards.CustomView;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.os.Build;
 import android.text.SpannableString;
 import android.text.Spanned;
 
 import com.CCS.LoginWithWeCards.R;
 import com.CCS.LoginWithWeCards.Utils.AppTypeface;
+import com.CCS.LoginWithWeCards.Utils.TypefaceUtils;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyTypefaceSpan;
 
@@ -19,16 +19,15 @@ import uk.co.chrisjenx.calligraphy.CalligraphyTypefaceSpan;
 
 public class DialogProgress extends ProgressDialog {
     private AppTypeface typeface;
-    private final String message = "Please Wait ...";
 
     public DialogProgress(Activity context) {
         super(context, getStyle());
 
-        typeface = new AppTypeface(context);
         setCancelable(false);
 
+        String message = "Please Wait ...";
         SpannableString spannableString = new SpannableString(message);
-        CalligraphyTypefaceSpan typefaceSpan = new CalligraphyTypefaceSpan(typeface.getRegularFont());
+        CalligraphyTypefaceSpan typefaceSpan = new CalligraphyTypefaceSpan(TypefaceUtils.getInstance().getRegularTypeface(context));
         spannableString.setSpan(typefaceSpan, 0, message.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 
         setMessage(spannableString);

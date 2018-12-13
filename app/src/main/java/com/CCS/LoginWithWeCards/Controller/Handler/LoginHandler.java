@@ -1,6 +1,6 @@
 package com.CCS.LoginWithWeCards.Controller.Handler;
 
-import android.support.annotation.Keep;
+import androidx.annotation.Keep;
 
 /**
  * Created by mauliksantoki on 24/4/17.
@@ -8,9 +8,9 @@ import android.support.annotation.Keep;
 @Keep
 public interface LoginHandler {
 
-    public void loginResult(String Result);
+    void loginResult(String Result);
 
-    public void logoutResult(String Result);
+    void logoutResult(String Result);
 
 
 }

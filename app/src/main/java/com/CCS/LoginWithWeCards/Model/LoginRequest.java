@@ -1,6 +1,6 @@
 package com.CCS.LoginWithWeCards.Model;
 
-import android.support.annotation.Keep;
+import androidx.annotation.Keep;
 
 /**
  * Created by mauliksantoki on 25/4/17.

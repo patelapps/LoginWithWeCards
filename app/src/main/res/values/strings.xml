@@ -1,23 +1,16 @@
 <resources>
-    <string name="app_name">LoginWithWeCards</string>
 
+    <string name="app_name">Demo</string>
 
+    <string name="label_password">Password</string>
 
-    <string name="wecards">WeCards</string>
-    <string name="confirmlogin">Confirm Login</string>
-    <string name="login">Login</string>
-
-    <string name="password">Password</string>
-
-    <string name="phonenumber">Phone Number</string>
-    <string name="createaccount">Create account</string>
+    <string name="label_phone_number">Phone Number</string>
+    <string name="label_create_account">Create account</string>
     <string name="ok">Ok</string>
     <string name="cancel">Cancel</string>
-    <string name="one_number">1</string>
 
 
-    <string name="loginwithmessage">Login to your WeCards account to Connect to ####</string>
-    <string name="comdirmwithmessage">Press \"OK\" to confirm with WeCards</string>
+    <string name="label_press_ok_to">Press \"OK\" to confirm with WeCards</string>
 
 
     <string name="enterRequiredInformation">Please enter required information.</string>
@@ -276,8 +269,16 @@
         <item>260,ZM,Zambia</item>
         <item>263,ZW,Zimbabwe</item>
         <item>358,AX,Aland Islands</item>
-
-
     </string-array>
+
+    // sagar : 12/12/18 New strings after lib change
+    <string name="label_sign_in_with">Sign in with WeCards</string>
+    <string name="label_sign_in">Sign in</string>
+    <!--# will be replaced by app name that is trying to connect with WeCards and it will be achieved through context. See LoginScreen-->
+    <string name="label_to_continue_with">To continue with #</string>
+    <string name="label_to_continue_we_cards_will">To continue, WeCards will share your name, phone number and profile picture with #</string>
+    <string name="label_privacy">Privacy</string>
+    <string name="label_terms">Terms</string>
+    <string name="label_country_code">Code</string>
 
 </resources>

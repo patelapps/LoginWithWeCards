@@ -6,29 +6,29 @@ package com.CCS.LoginWithWeCards.UI.Handler;
 
 public interface ScreenHandler {
 
-    public void initControl();
+    void initControl();
 
-    public void initDailogHeight();
+    void initDailogHeight();
 
-    public void initlayouts();
+    void initlayouts();
 
-    public void initTypeFace();
+    void initTypeFace();
 
-    public void initClickListener();
+    void initClickListener();
 
-    public void APICall();
+    void APICall();
 
-    public void hideSoftInput();
+    void hideSoftInput();
 
-    public void openAppInPlayStore();
+    void openAppInPlayStore();
 
-    public void showProgress();
+    void showProgress();
 
-    public void hideProgress();
+    void hideProgress();
 
-    public boolean validation();
+    boolean validation();
 
-    public void error(String message);
+    void error(String message);
 
-    public void scrollUpDialog();
+    void scrollUpDialog();
 }

@@ -8,8 +8,8 @@ import android.graphics.drawable.Drawable;
 
 public class AppContacts {
 
-    public static String wecardsAppPackage = "com.CCS.WeCards";
-    public static String loginActvity = wecardsAppPackage + ".LoginWithWecards";
+    public static final String wecardsAppPackage = "com.CCS.WeCards";
+    public static final String loginActvity = wecardsAppPackage + ".LoginWithWecards";
 
     public static String loginWithAppPackageName;
     public static String loginWithAppName;
@@ -28,4 +28,10 @@ public class AppContacts {
 
     public static final String CONTACT_US = "Any queries/feedback email to info@ccs.sg";
 
+    public static final String STR_MSG_ERROR_TYPEFACE_REFLECTION
+            = "Use getInstance() method to get single instance of this class.";
+
+
+    public static final String URL_PRIVACY = "https://www.we.cards/privacy_policy.php?from=mobile";
+    public static final String URL_TERMS = "https://www.we.cards/terms_and_condition.php?from=mobile";
 }

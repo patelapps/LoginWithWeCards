@@ -5,24 +5,24 @@ package com.CCS.LoginWithWeCards.Controller.Handler;
  */
 
 public interface loginWithWecardsHandler {
-    public void setAppPackageName();
+    void setAppPackageName();
 
-    public void setAppIcon();
+    void setAppIcon();
 
-    public void setAppName();
+    void setAppName();
 
-    public void setAppLoginID();
+    void setAppLoginID();
 
 
-    public void login();
+    void login();
 
-    public void logout();
+    void logout();
 
-    public void unRegisterCommunicator();
+    void unRegisterCommunicator();
 
-    public boolean validation();
+    boolean validation();
 
-    public void error(String message);
+    void error(String message);
 
 
 

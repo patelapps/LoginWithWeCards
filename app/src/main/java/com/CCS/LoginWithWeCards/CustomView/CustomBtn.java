@@ -15,22 +15,22 @@ import static com.CCS.LoginWithWeCards.Utils.setDrawableBackGround.setDrawableBa
  * Created by mauliksantoki on 10/1/17.
  */
 
-public class CustomBtn extends android.support.v7.widget.AppCompatButton {
+public class CustomBtn extends androidx.appcompat.widget.AppCompatButton {
 
-    int deadultColor;
-    int pressColor;
-    int borderCOlor = 8;
+    private int deadultColor;
+    private int pressColor;
+    private int borderCOlor = 8;
 
-    int borderStroke = 8;
-    int leftTopRadius = 8;
-    int rightTopRadius = 8;
-    int rightBottomRadius = 8;
-    int leftBottomRadius = 8;
+    private int borderStroke = 8;
+    private int leftTopRadius = 8;
+    private int rightTopRadius = 8;
+    private int rightBottomRadius = 8;
+    private int leftBottomRadius = 8;
 
-    int textColor;
-    int textPressColor;
+    private int textColor;
+    private int textPressColor;
 
-    StateListDrawable states;
+    private StateListDrawable states;
 
     public CustomBtn(Context context) {
         super(context);
@@ -43,12 +43,12 @@ public class CustomBtn extends android.support.v7.widget.AppCompatButton {
                 R.styleable.CustomBtn,
                 0, 0);
 
-        deadultColor = a.getColor(R.styleable.CustomBtn_btnDeafultColor, context.getResources().getColor(R.color.black));
-        pressColor = a.getColor(R.styleable.CustomBtn_btnPressColor, context.getResources().getColor(R.color.black));
+        deadultColor = a.getColor(R.styleable.CustomBtn_btnDeafultColor, context.getResources().getColor(R.color.colorBlack));
+        pressColor = a.getColor(R.styleable.CustomBtn_btnPressColor, context.getResources().getColor(R.color.colorBlack));
         borderCOlor = a.getColor(R.styleable.CustomBtn_btnBorderCOlor, 0);
 
-        textColor = a.getColor(R.styleable.CustomBtn_btnTextColor, context.getResources().getColor(R.color.black));
-        textPressColor = a.getColor(R.styleable.CustomBtn_btnTextPress, context.getResources().getColor(R.color.black));
+        textColor = a.getColor(R.styleable.CustomBtn_btnTextColor, context.getResources().getColor(R.color.colorBlack));
+        textPressColor = a.getColor(R.styleable.CustomBtn_btnTextPress, context.getResources().getColor(R.color.colorBlack));
 
         borderStroke = a.getColor(R.styleable.CustomBtn_btnBorderSize, 0);
         leftTopRadius = a.getColor(R.styleable.CustomBtn_btnCornerRadiusLeftTop, 0);

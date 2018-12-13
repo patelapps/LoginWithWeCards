@@ -17,7 +17,7 @@ public class appInstalledOrNot {
         try {
             PackageInfo packageInfo = context.getPackageManager().getPackageInfo(packagename, 0);
             /*we add login with wecards in version code 5 ,version 1.0.4*/
-            if (packageInfo.versionCode > 4) {
+            if (packageInfo.getLongVersionCode() > 4) {
                 return true;
             }
         } catch (PackageManager.NameNotFoundException e) {

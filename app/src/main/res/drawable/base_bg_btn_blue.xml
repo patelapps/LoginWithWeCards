@@ -3,14 +3,14 @@
     <item>
         <shape android:shape="rectangle"
             >
-            <solid android:color="@color/colorBlueBtn"/>
-            <corners android:bottomLeftRadius="@dimen/view_space_5"
-                     android:bottomRightRadius="@dimen/view_space_5"
-                     android:topLeftRadius="@dimen/view_space_5"
-                     android:topRightRadius="@dimen/view_space_5">
+            <solid android:color="@color/colorBlue"/>
+            <corners android:bottomLeftRadius="@dimen/btn_radius"
+                     android:bottomRightRadius="@dimen/btn_radius"
+                     android:topLeftRadius="@dimen/btn_radius"
+                     android:topRightRadius="@dimen/btn_radius">
             </corners>
-            <size android:width="@dimen/view_space_50"
-                android:height="@dimen/view_space_15"/>
+            <size android:width="@dimen/height_btn_default"
+                android:height="@dimen/btn_radius"/>
         </shape>
     </item>
 </selector>
