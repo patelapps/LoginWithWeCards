@@ -24,7 +24,7 @@ public class getResources {
                 }
             }
         } catch (Exception e) {
-            Log.e(AppContacts.Tag, "getDrawable - resource_name: " + resource_name);
+            Log.e(AppConstants.Tag, "getDrawable - resource_name: " + resource_name);
             e.printStackTrace();
         }
 
@@ -39,7 +39,7 @@ public class getResources {
                 return context.getResources().getString(resId);
             }
         } catch (Exception e) {
-            Log.e(AppContacts.Tag, "getDrawable - resource_name: " + resource_name);
+            Log.e(AppConstants.Tag, "getDrawable - resource_name: " + resource_name);
             e.printStackTrace();
         }
 

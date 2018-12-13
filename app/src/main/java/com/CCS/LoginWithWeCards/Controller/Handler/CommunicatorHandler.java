@@ -13,7 +13,7 @@ import com.CCS.LoginWithWeCards.API.Handler.APIResponseHandler;
 import com.CCS.LoginWithWeCards.API.RestClient;
 import com.CCS.LoginWithWeCards.CustomView.DialogProgress;
 import com.CCS.LoginWithWeCards.Model.LogoutRequest;
-import com.CCS.LoginWithWeCards.Utils.AppContacts;
+import com.CCS.LoginWithWeCards.Utils.AppConstants;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -26,10 +26,10 @@ import retrofit2.Response;
 import static com.CCS.LoginWithWeCards.API.jsonKeys.DATA;
 import static com.CCS.LoginWithWeCards.API.jsonKeys.LOGIN_TOKEN;
 import static com.CCS.LoginWithWeCards.API.jsonKeys.USER_ID;
-import static com.CCS.LoginWithWeCards.Utils.AppContacts.PREFS_PRIVATE;
-import static com.CCS.LoginWithWeCards.Utils.AppContacts.Tag;
-import static com.CCS.LoginWithWeCards.Utils.AppContacts.loginWithAppPackageName;
-import static com.CCS.LoginWithWeCards.Utils.AppContacts.loginWithWecardKey;
+import static com.CCS.LoginWithWeCards.Utils.AppConstants.PREFS_PRIVATE;
+import static com.CCS.LoginWithWeCards.Utils.AppConstants.Tag;
+import static com.CCS.LoginWithWeCards.Utils.AppConstants.loginWithAppPackageName;
+import static com.CCS.LoginWithWeCards.Utils.AppConstants.loginWithWecardKey;
 
 /**
  * Created by mauliksantoki on 26/4/17.
@@ -72,7 +72,7 @@ public class CommunicatorHandler extends Communicator {
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
-                    Log.e(AppContacts.Tag, "Contact to ");
+                    Log.e(AppConstants.Tag, "Contact to ");
                 }
             }
         };

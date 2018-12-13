@@ -21,7 +21,7 @@ public class appInstalledOrNot {
                 return true;
             }
         } catch (PackageManager.NameNotFoundException e) {
-            Log.e(AppContacts.Tag, e.getMessage());
+            Log.e(AppConstants.Tag, e.getMessage());
 
         }
         return false;

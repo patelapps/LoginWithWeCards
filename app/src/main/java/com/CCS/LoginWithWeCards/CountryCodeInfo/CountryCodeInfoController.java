@@ -6,7 +6,8 @@ import android.os.Build;
 import android.telephony.TelephonyManager;
 
 import com.CCS.LoginWithWeCards.R;
-import com.CCS.LoginWithWeCards.Utils.AppContacts;
+import com.CCS.LoginWithWeCards.Utils.AppConstants;
+import com.CCS.LoginWithWeCards.Utils.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -86,7 +87,8 @@ public class CountryCodeInfoController {
 
             }
         } catch (Exception e) {
-            showErrorHandler(context, AppContacts.CONTACT_US);
+//            showErrorHandler(context, AppConstants.CONTACT_US);
+            Utils.showAlertDialog(context, AppConstants.CONTACT_US);
         }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {

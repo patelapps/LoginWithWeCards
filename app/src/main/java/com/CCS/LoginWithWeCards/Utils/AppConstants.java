@@ -6,7 +6,7 @@ import android.graphics.drawable.Drawable;
  * Created by mauliksantoki on 24/4/17.
  */
 
-public class AppContacts {
+public class AppConstants {
 
     public static final String wecardsAppPackage = "com.CCS.WeCards";
     public static final String loginActvity = wecardsAppPackage + ".LoginWithWecards";

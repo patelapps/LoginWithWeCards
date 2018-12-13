@@ -11,7 +11,7 @@ import android.widget.Toast;
 public class errorHandler {
 
     public static void showErrorHandler(Activity activity, String message) {
-        Log.e(AppContacts.Tag, message);
+        Log.e(AppConstants.Tag, message);
         Toast.makeText(activity, message, Toast.LENGTH_LONG).show();
     }
 

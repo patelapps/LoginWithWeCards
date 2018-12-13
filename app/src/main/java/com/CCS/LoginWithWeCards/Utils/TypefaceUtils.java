@@ -29,7 +29,7 @@ public class TypefaceUtils {
     private TypefaceUtils() {
         //Prevent from the reflection
         if (mTypefaceUtils != null) {
-            throw new RuntimeException(AppContacts.STR_MSG_ERROR_TYPEFACE_REFLECTION);
+            throw new RuntimeException(AppConstants.STR_MSG_ERROR_TYPEFACE_REFLECTION);
         }
     }
 

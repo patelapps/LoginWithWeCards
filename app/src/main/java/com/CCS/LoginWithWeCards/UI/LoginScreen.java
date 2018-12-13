@@ -31,10 +31,11 @@ import com.CCS.LoginWithWeCards.Model.LoginRequest;
 import com.CCS.LoginWithWeCards.Model.RequestData;
 import com.CCS.LoginWithWeCards.R;
 import com.CCS.LoginWithWeCards.UI.Handler.ScreenHandler;
-import com.CCS.LoginWithWeCards.Utils.AppContacts;
+import com.CCS.LoginWithWeCards.Utils.AppConstants;
 import com.CCS.LoginWithWeCards.Utils.AppTypeface;
 import com.CCS.LoginWithWeCards.Utils.OpenCustomTabsIntent;
 import com.CCS.LoginWithWeCards.Utils.TypefaceUtils;
+import com.CCS.LoginWithWeCards.Utils.Utils;
 import com.CCS.LoginWithWeCards.Utils.Validate;
 import com.CCS.LoginWithWeCards.Utils.appInstalledOrNot;
 import com.CCS.LoginWithWeCards.databinding.LoginscreenBinding;
@@ -51,14 +52,14 @@ import uk.co.chrisjenx.calligraphy.CalligraphyTypefaceSpan;
 
 import static com.CCS.LoginWithWeCards.API.jsonKeys.API_KEY;
 import static com.CCS.LoginWithWeCards.API.jsonKeys.PACKAGENAME;
-import static com.CCS.LoginWithWeCards.Utils.AppContacts.COUNTRY_CODE_LIMIT;
-import static com.CCS.LoginWithWeCards.Utils.AppContacts.PHONE_NUMBER_LIMIT;
-import static com.CCS.LoginWithWeCards.Utils.AppContacts.Tag;
-import static com.CCS.LoginWithWeCards.Utils.AppContacts.loginActvity;
-import static com.CCS.LoginWithWeCards.Utils.AppContacts.loginWithAppName;
-import static com.CCS.LoginWithWeCards.Utils.AppContacts.loginWithAppPackageName;
-import static com.CCS.LoginWithWeCards.Utils.AppContacts.loginWithWecardKey;
-import static com.CCS.LoginWithWeCards.Utils.AppContacts.wecardsAppPackage;
+import static com.CCS.LoginWithWeCards.Utils.AppConstants.COUNTRY_CODE_LIMIT;
+import static com.CCS.LoginWithWeCards.Utils.AppConstants.PHONE_NUMBER_LIMIT;
+import static com.CCS.LoginWithWeCards.Utils.AppConstants.Tag;
+import static com.CCS.LoginWithWeCards.Utils.AppConstants.loginActvity;
+import static com.CCS.LoginWithWeCards.Utils.AppConstants.loginWithAppName;
+import static com.CCS.LoginWithWeCards.Utils.AppConstants.loginWithAppPackageName;
+import static com.CCS.LoginWithWeCards.Utils.AppConstants.loginWithWecardKey;
+import static com.CCS.LoginWithWeCards.Utils.AppConstants.wecardsAppPackage;
 import static com.CCS.LoginWithWeCards.Utils.errorHandler.showErrorHandler;
 import static com.CCS.LoginWithWeCards.Utils.isNetworkAvailable.isNetworkAvailable;
 
@@ -286,8 +287,8 @@ public class LoginScreen extends Dialog implements ScreenHandler {
             }
         });
 
-        tvPrivacy.setOnClickListener(v -> OpenCustomTabsIntent.openCustomTabsIntent(activity, AppContacts.URL_PRIVACY));
-        tvTerms.setOnClickListener(v -> OpenCustomTabsIntent.openCustomTabsIntent(activity, AppContacts.URL_TERMS));
+        tvPrivacy.setOnClickListener(v -> OpenCustomTabsIntent.openCustomTabsIntent(activity, AppConstants.URL_PRIVACY));
+        tvTerms.setOnClickListener(v -> OpenCustomTabsIntent.openCustomTabsIntent(activity, AppConstants.URL_TERMS));
     }
 
     @Override
@@ -327,7 +328,8 @@ public class LoginScreen extends Dialog implements ScreenHandler {
 
                     });
                 } else {
-                    showErrorHandler(activity, AppContacts.CONTACT_US);
+//                    showErrorHandler(activity, AppConstants.CONTACT_US);
+                    Utils.showAlertDialog(activity, AppConstants.CONTACT_US);
                 }
 
                 hideProgress();
@@ -411,7 +413,8 @@ public class LoginScreen extends Dialog implements ScreenHandler {
     @Override
     public void error(String message) {
 //        showErrorHandler(activity, message);
-        showAlertDialog(message);
+//        showAlertDialog(message);
+        Utils.showAlertDialog(activity, message);
     }
 
     @Override

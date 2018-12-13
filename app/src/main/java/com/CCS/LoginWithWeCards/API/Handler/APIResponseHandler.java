@@ -5,7 +5,8 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.widget.Toast;
 
-import com.CCS.LoginWithWeCards.Utils.AppContacts;
+import com.CCS.LoginWithWeCards.Utils.AppConstants;
+import com.CCS.LoginWithWeCards.Utils.Utils;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -24,7 +25,7 @@ import static com.CCS.LoginWithWeCards.API.jsonKeys.RESULT;
 import static com.CCS.LoginWithWeCards.API.jsonKeys.STATUS;
 import static com.CCS.LoginWithWeCards.API.jsonKeys.SUCCESS;
 import static com.CCS.LoginWithWeCards.API.jsonKeys.USER_ID;
-import static com.CCS.LoginWithWeCards.Utils.AppContacts.PREFS_PRIVATE;
+import static com.CCS.LoginWithWeCards.Utils.AppConstants.PREFS_PRIVATE;
 import static com.CCS.LoginWithWeCards.Utils.errorHandler.showErrorHandler;
 
 
@@ -75,13 +76,15 @@ public class APIResponseHandler extends APIResponse {
                 String apiResult = jsonObject.getJSONObject(DATA).toString();
                 handler.getData(apiResult, apiResultMessage);
             } else {
-                Toast.makeText(activity, apiResultMessage,
-                        Toast.LENGTH_LONG).show();
+//                Toast.makeText(activity, apiResultMessage,
+//                        Toast.LENGTH_LONG).show();
+                Utils.showAlertDialog(activity, apiResultMessage);
             }
 
         } catch (JSONException e) {
             e.printStackTrace();
-            showErrorHandler(activity, AppContacts.CONTACT_US);
+//            showErrorHandler(activity, AppConstants.CONTACT_US);
+            Utils.showAlertDialog(activity, AppConstants.CONTACT_US);
         }
     }
 

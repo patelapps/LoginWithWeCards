@@ -18,13 +18,13 @@ import static com.CCS.LoginWithWeCards.API.jsonKeys.APP_NAME;
 import static com.CCS.LoginWithWeCards.API.jsonKeys.IC_LAUNCHER;
 import static com.CCS.LoginWithWeCards.API.jsonKeys.PACKAGENAME;
 import static com.CCS.LoginWithWeCards.API.jsonKeys.WECARDS_APP_ID;
-import static com.CCS.LoginWithWeCards.Utils.AppContacts.Tag;
-import static com.CCS.LoginWithWeCards.Utils.AppContacts.loginActvity;
-import static com.CCS.LoginWithWeCards.Utils.AppContacts.loginWithAppIcon;
-import static com.CCS.LoginWithWeCards.Utils.AppContacts.loginWithAppName;
-import static com.CCS.LoginWithWeCards.Utils.AppContacts.loginWithAppPackageName;
-import static com.CCS.LoginWithWeCards.Utils.AppContacts.loginWithWecardKey;
-import static com.CCS.LoginWithWeCards.Utils.AppContacts.wecardsAppPackage;
+import static com.CCS.LoginWithWeCards.Utils.AppConstants.Tag;
+import static com.CCS.LoginWithWeCards.Utils.AppConstants.loginActvity;
+import static com.CCS.LoginWithWeCards.Utils.AppConstants.loginWithAppIcon;
+import static com.CCS.LoginWithWeCards.Utils.AppConstants.loginWithAppName;
+import static com.CCS.LoginWithWeCards.Utils.AppConstants.loginWithAppPackageName;
+import static com.CCS.LoginWithWeCards.Utils.AppConstants.loginWithWecardKey;
+import static com.CCS.LoginWithWeCards.Utils.AppConstants.wecardsAppPackage;
 import static com.CCS.LoginWithWeCards.Utils.getResources.getDrawable;
 import static com.CCS.LoginWithWeCards.Utils.getResources.getString;
 
@@ -33,13 +33,13 @@ import static com.CCS.LoginWithWeCards.Utils.getResources.getString;
  */
 
 @Keep
-public class loginWithWecards implements loginWithWecardsHandler {
+public class LoginWithWeCards implements loginWithWecardsHandler {
 
     private final Activity context;
     private final LoginHandler loginHandler;
     private final Communicator communicator;
 
-    public loginWithWecards(Activity context, LoginHandler loginListener) {
+    public LoginWithWeCards(Activity context, LoginHandler loginListener) {
         this.context = context;
         communicator = new CommunicatorHandler();
         setAppIcon();
