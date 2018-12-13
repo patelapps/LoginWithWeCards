@@ -24,7 +24,7 @@ import com.CCS.LoginWithWeCards.API.Handler.APIResponse;
 import com.CCS.LoginWithWeCards.API.Handler.APIResponseHandler;
 import com.CCS.LoginWithWeCards.API.RestClient;
 import com.CCS.LoginWithWeCards.CountryCodeInfo.CountryCodeInfoController;
-import com.CCS.LoginWithWeCards.CustomView.CustomTextView;
+import com.CCS.LoginWithWeCards.CustomView.WeCardCustomTextView;
 import com.CCS.LoginWithWeCards.CustomView.DialogProgress;
 import com.CCS.LoginWithWeCards.Model.Handler.LoginRequestHandler;
 import com.CCS.LoginWithWeCards.Model.LoginRequest;
@@ -77,19 +77,19 @@ public class LoginScreen extends Dialog implements ScreenHandler {
 
     private String apiResult = "";
 
-    private CustomTextView tvTitle;
-    private CustomTextView tvSignInTitle;
-    private CustomTextView tvToConWith;
+    private WeCardCustomTextView tvTitle;
+    private WeCardCustomTextView tvSignInTitle;
+    private WeCardCustomTextView tvToConWith;
     private TextInputEditText tietCountryCode;
     private TextInputEditText tietPhoneNumber;
     private TextInputEditText tietPassword;
-    private CustomTextView tvToConWe;
-    private CustomTextView tvPrivacy;
-    private CustomTextView tvTerms;
-    private CustomTextView tvCreateAccount;
-    private CustomTextView btnSignin;
-    private CustomTextView btnCancel;
-    private CustomTextView btnOk;
+    private WeCardCustomTextView tvToConWe;
+    private WeCardCustomTextView tvPrivacy;
+    private WeCardCustomTextView tvTerms;
+    private WeCardCustomTextView tvCreateAccount;
+    private WeCardCustomTextView btnSignin;
+    private WeCardCustomTextView btnCancel;
+    private WeCardCustomTextView btnOk;
     private ImageView ivClose;
     private ConstraintLayout layoutSignInWith;
     private ConstraintLayout layoutConfirm;

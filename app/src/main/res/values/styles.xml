@@ -29,8 +29,8 @@
     <style name="TvReg">
         <item name="android:textColor">@color/colorRegTexts</item>
         <item name="android:textSize">@dimen/size_tv_reg</item>
-        <item name="ctvTxtColor">@color/colorRegTexts</item>
-        <item name="txtTypeface">regular</item>
+        <item name="we_ctvTxtColor">@color/colorRegTexts</item>
+        <item name="weTvTypeface">we_regular</item>
     </style>
 
     <style name="Tiet">

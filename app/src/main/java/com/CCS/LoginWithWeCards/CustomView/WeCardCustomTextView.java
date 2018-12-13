@@ -15,10 +15,10 @@ import androidx.core.graphics.ColorUtils;
  * Created by mauliksantoki on 21/8/17.
  */
 
-public class CustomTextView extends AppCompatTextView {
+public class WeCardCustomTextView extends AppCompatTextView {
 
 
-    public CustomTextView(Context context, AttributeSet attrs) {
+    public WeCardCustomTextView(Context context, AttributeSet attrs) {
         super(context, attrs);
         initAttrs(context, attrs);
     }
@@ -26,12 +26,12 @@ public class CustomTextView extends AppCompatTextView {
     private void initAttrs(Context context, AttributeSet attrs) {
         TypedArray a = getContext().getTheme().obtainStyledAttributes(
                 attrs,
-                R.styleable.CustomTextView,
+                R.styleable.WeCardCustomTextView,
                 0, 0);
 
-        int typeface = a.getInt(R.styleable.CustomTextView_txtTypeface, 0);
-        int color = a.getColor(R.styleable.CustomTextView_ctvTxtColor, 0);
-        int selectedColor = a.getColor(R.styleable.CustomTextView_ctvSelectedTxtColor, 0);
+        int typeface = a.getInt(R.styleable.WeCardCustomTextView_weTvTypeface, 0);
+        int color = a.getColor(R.styleable.WeCardCustomTextView_we_ctvTxtColor, 0);
+        int selectedColor = a.getColor(R.styleable.WeCardCustomTextView_we_ctvSelectedTxtColor, 0);
 
         setTypeface(typeface);
 
@@ -86,7 +86,7 @@ public class CustomTextView extends AppCompatTextView {
         return ColorUtils.setAlphaComponent(color, 128);
     }
 
-    public CustomTextView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public WeCardCustomTextView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         initAttrs(context, attrs);
     }

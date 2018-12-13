@@ -44,7 +44,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <com.CCS.LoginWithWeCards.CustomView.CustomTextView
+                <com.CCS.LoginWithWeCards.CustomView.WeCardCustomTextView
                     android:id="@+id/tv_title"
                     style="@style/TvReg"
                     android:layout_width="0dp"
@@ -102,7 +102,7 @@
                     android:layout_height="wrap_content"
                     android:visibility="visible">
 
-                    <com.CCS.LoginWithWeCards.CustomView.CustomTextView
+                    <com.CCS.LoginWithWeCards.CustomView.WeCardCustomTextView
                         android:id="@+id/tv_sign_in_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -116,15 +116,15 @@
                         android:textSize="@dimen/size_tv_screen_title"
                         android:textStyle="bold"
                         android:typeface="normal"
-                        app:txtTypeface="bold"
-                        app:ctvTxtColor="@color/colorRegTexts"
+                        app:weTvTypeface="we_bold"
+                        app:we_ctvTxtColor="@color/colorRegTexts"
                         android:clickable="false"
                         android:focusable="false"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <com.CCS.LoginWithWeCards.CustomView.CustomTextView
+                    <com.CCS.LoginWithWeCards.CustomView.WeCardCustomTextView
                         android:id="@+id/tv_to_con_with"
                         style="@style/TvReg"
                         android:layout_width="wrap_content"
@@ -222,7 +222,7 @@
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <!--To continue, WeCards will-->
-                    <com.CCS.LoginWithWeCards.CustomView.CustomTextView
+                    <com.CCS.LoginWithWeCards.CustomView.WeCardCustomTextView
                         android:id="@+id/tv_to_con_we"
                         style="@style/TvReg"
                         android:layout_width="0dp"
@@ -238,7 +238,7 @@
                         app:layout_constraintTop_toBottomOf="@+id/til_password" />
 
                     <!--Create account-->
-                    <com.CCS.LoginWithWeCards.CustomView.CustomTextView
+                    <com.CCS.LoginWithWeCards.CustomView.WeCardCustomTextView
                         android:id="@+id/tv_create_account"
                         style="@style/TvReg"
                         android:layout_width="wrap_content"
@@ -250,7 +250,7 @@
                         android:layout_marginTop="@dimen/view_space_et_top"
                         android:background="@color/colorTransparent"
                         android:text="@string/label_create_account"
-                        app:ctvTxtColor="@color/colorBlue"
+                        app:we_ctvTxtColor="@color/colorBlue"
                         android:textColor="@color/colorBlue"
                         android:textSize="@dimen/size_tv_create_ac"
                         app:layout_constraintLeft_toLeftOf="@+id/tv_sign_in_title"
@@ -258,7 +258,7 @@
                         app:layout_constraintTop_toBottomOf="@+id/tv_to_con_we" />
 
                     <!--Sign in-->
-                    <com.CCS.LoginWithWeCards.CustomView.CustomTextView
+                    <com.CCS.LoginWithWeCards.CustomView.WeCardCustomTextView
                         android:id="@+id/btnSignin"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -275,7 +275,7 @@
                         android:paddingEnd="@dimen/pad_btn_start_end"
                         android:paddingRight="@dimen/pad_btn_start_end"
                         android:text="@string/label_sign_in"
-                        app:ctvTxtColor="@color/colorWhite"
+                        app:we_ctvTxtColor="@color/colorWhite"
                         android:textAllCaps="false"
                         android:textColor="@color/colorWhite"
                         android:textSize="@dimen/size_tv_btn"
@@ -286,7 +286,7 @@
                          />
 
                     <!--Privacy-->
-                    <com.CCS.LoginWithWeCards.CustomView.CustomTextView
+                    <com.CCS.LoginWithWeCards.CustomView.WeCardCustomTextView
                         android:id="@+id/tv_privacy"
                         style="@style/TvReg"
                         android:layout_width="wrap_content"
@@ -308,7 +308,7 @@
                         app:layout_constraintTop_toBottomOf="@+id/tv_create_account" />
 
                     <!--Terms-->
-                    <com.CCS.LoginWithWeCards.CustomView.CustomTextView
+                    <com.CCS.LoginWithWeCards.CustomView.WeCardCustomTextView
                         android:id="@+id/tv_terms"
                         style="@style/TvReg"
                         android:layout_width="wrap_content"
@@ -363,7 +363,7 @@
                         android:scaleType="fitXY"
                         android:src="@mipmap/logo" />
 
-                    <com.CCS.LoginWithWeCards.CustomView.CustomTextView
+                    <com.CCS.LoginWithWeCards.CustomView.WeCardCustomTextView
                         android:id="@+id/tv_press_ok"
                         style="@style/TvReg"
                         android:layout_width="wrap_content"
@@ -373,7 +373,7 @@
 
                 </LinearLayout>
 
-                <com.CCS.LoginWithWeCards.CustomView.CustomTextView
+                <com.CCS.LoginWithWeCards.CustomView.WeCardCustomTextView
                     android:id="@+id/btnCancel"
                     android:background="@drawable/rect_holo_blue_border"
                     android:layout_width="0dp"
@@ -391,7 +391,7 @@
                     android:text="@string/cancel"
                     android:textAllCaps="false"
                     android:textSize="@dimen/size_tv_btn"
-                    app:ctvTxtColor="@color/colorBlue"
+                    app:we_ctvTxtColor="@color/colorBlue"
                     android:textColor="@color/colorBlue"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/btnOk"
@@ -401,7 +401,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     />
 
-                <com.CCS.LoginWithWeCards.CustomView.CustomTextView
+                <com.CCS.LoginWithWeCards.CustomView.WeCardCustomTextView
                     android:id="@+id/btnOk"
                     android:background="@drawable/bg_btn_blue"
                     android:layout_width="0dp"
@@ -410,7 +410,7 @@
                     android:layout_marginLeft="5dp"
                     android:layout_marginEnd="5dp"
                     android:layout_marginRight="5dp"
-                    app:ctvTxtColor="@color/colorWhite"
+                    app:we_ctvTxtColor="@color/colorWhite"
                     android:textColor="@color/colorWhite"
                     android:clickable="true"
                     android:focusable="false"

@@ -1,32 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--Use unique name to avoid aapt2 attr duplicate resource error-->
 
-
-    <declare-styleable name="CustomBtn">
-        <attr name="btnPressColor" format="color" />
-        <attr name="btnDeafultColor" format="color" />
-        <attr name="btnBorderCOlor" format="color" />
-        <attr name="btnTextPress" format="color" />
-        <attr name="btnTextColor" format="color" />
-        <attr name="btnCornerRadiusLeftTop" format="integer" />
-        <attr name="btnCornerRadiusRightTop" format="integer" />
-        <attr name="btnCornerRadiusRightBottom" format="integer" />
-        <attr name="btnCornerRadiusLeftBottom" format="integer" />
-        <attr name="btnBorderSize" format="integer" />
-    </declare-styleable>
-
-    <declare-styleable name="CustomTextView">
-        <attr name="txtTypeface" format="enum">
-            <enum name="regular" value="0" />
-            <enum name="bold" value="1" />
-            <enum name="light" value="2" />
-            <enum name="light_italic" value="3" />
-            <enum name="demi_bold" value="4" />
-            <enum name="medium" value="5" />
-            <enum name="medium_italic" value="6" />
+    <!--This is to prevent the error duplicate value for resource 'attr/mode' in host container project that would use this library-->
+    <declare-styleable name="WeCardCustomTextView">
+        <attr name="weTvTypeface" format="enum">
+            <enum name="we_regular" value="0" />
+            <enum name="we_bold" value="1" />
         </attr>
-        <attr name="ctvTxtColor" format="color" />
-        <attr name="ctvSelectedTxtColor" format="color" />
+        <attr name="we_ctvTxtColor" format="color" />
+        <attr name="we_ctvSelectedTxtColor" format="color" />
     </declare-styleable>
 
 </resources>
