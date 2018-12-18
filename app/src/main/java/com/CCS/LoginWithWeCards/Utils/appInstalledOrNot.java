@@ -3,6 +3,7 @@ package com.CCS.LoginWithWeCards.Utils;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.util.Log;
 
 /**
@@ -17,9 +18,15 @@ public class appInstalledOrNot {
         try {
             PackageInfo packageInfo = context.getPackageManager().getPackageInfo(packagename, 0);
             /*we add login with wecards in version code 5 ,version 1.0.4*/
-            if (packageInfo.getLongVersionCode() > 4) {
-                return true;
+            // sagar : 18/12/18 getLongVersionCode crashes with error: No such virtual method in system framework before pie!
+
+            // sagar : 18/12/18 Build version of host application i.e. phD
+            if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.O) {
+                return packageInfo.versionCode > 4;
+            } else {
+                return packageInfo.getLongVersionCode() > 4;
             }
+
         } catch (PackageManager.NameNotFoundException e) {
             Log.e(AppConstants.Tag, e.getMessage());
 
