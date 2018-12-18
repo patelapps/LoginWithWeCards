@@ -21,7 +21,7 @@ public class appInstalledOrNot {
             // sagar : 18/12/18 getLongVersionCode crashes with error: No such virtual method in system framework before pie!
 
             // sagar : 18/12/18 Build version of host application i.e. phD
-            if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.O) {
+            if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.O_MR1) {
                 return packageInfo.versionCode > 4;
             } else {
                 return packageInfo.getLongVersionCode() > 4;
