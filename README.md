@@ -21,7 +21,7 @@ allprojects {
 * Add it in your module build.gradle dependencies:
 ``` java
 dependencies{
-     compile 'com.github.patelapps:LoginWithWeCards:1.3.52'
+     compile 'com.github.patelapps:LoginWithWeCards:1.3.63'
    }
 ```
 
@@ -29,14 +29,13 @@ dependencies{
 
 ``` java
 
-compileSdkVersion 25
-buildToolsVersion "25.0.2"
+compileSdkVersion 28
 minSdkVersion 16    
-targetSdkVersion 25
+targetSdkVersion 28
     
-private loginWithWecards loginWithWecards;
+private LoginWithWecards loginWithWecards;
 
-loginWithWecards = new loginWithWecards(activity, new LoginHandler() {
+loginWithWecards = new LoginWithWecards(activity, new LoginHandler() {
   
   @Override
   public void loginResult(String result) {
